@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfect Engineering Corporation – Chlorine Handling & Safety Equipment</title>
+  <meta name="description" content="Perfect Engineering Corporation – ISO 9001-2008 certified manufacturer of Vacuum Type Chlorinators, Chlorine Leak Absorption Systems, Blowers, FRP Ducting and more. Based in Delhi & Ghaziabad." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a2332;
+      background: #fff;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Colour tokens ── */
+    :root {
+      --blue-dark:  #0a2540;
+      --blue-mid:   #1565c0;
+      --blue-light: #1e88e5;
+      --teal:       #00acc1;
+      --accent:     #ff6f00;
+      --grey-bg:    #f4f7fb;
+      --grey-text:  #5a6a7e;
+      --white:      #ffffff;
+      --border:     #dce6f5;
+    }
+
+    /* ── Utility ── */
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800; color: var(--blue-dark); line-height: 1.2;
+    }
+    .section-sub {
+      color: var(--grey-text); margin-top: 12px;
+      font-size: 1rem; max-width: 640px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 6px; font-weight: 600;
+      font-size: 0.95rem; transition: all 0.2s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--blue-light); color: #fff;
+      box-shadow: 0 4px 18px rgba(30,136,229,.35);
+    }
+    .btn-primary:hover { background: var(--blue-mid); box-shadow: 0 6px 24px rgba(30,136,229,.45); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,37,64,0.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 68px;
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo {
+      width: 42px; height: 42px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-size: 1.15rem; font-weight: 900;
+      color: #fff; letter-spacing: -1px; flex-shrink: 0;
+    }
+    .nav-name {
+      font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700;
+      color: #fff; line-height: 1.25;
+    }
+    .nav-name span { display: block; font-weight: 400; font-size: 0.65rem; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; }
+    .nav-links {
+      display: flex; gap: 6px; list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8); font-size: 0.88rem; font-weight: 500;
+      padding: 6px 14px; border-radius: 5px; transition: all 0.18s;
+    }
+    .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.1); }
+    .nav-cta {
+      background: var(--blue-light); color: #fff !important;
+      padding: 7px 18px !important; border-radius: 6px !important;
+    }
+    .nav-cta:hover { background: var(--teal) !important; }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; margin: 5px 0; border-radius: 2px; transition: 0.3s; }
+
+    /* ── Hero ── */
+    #home {
+      min-height: 100vh;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: 100px 0 80px;
+    }
+    .hero-video-wrap {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-video-wrap video,
+    .hero-video-wrap canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(10,37,64,0.92) 0%,
+        rgba(21,101,192,0.80) 55%,
+        rgba(0,172,193,0.68) 100%
+      );
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px; padding: 6px 16px; margin-bottom: 24px;
+    }
+    .hero-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+    .hero-badge span { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.95); letter-spacing: 0.07em; text-transform: uppercase; }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem); font-weight: 900;
+      color: #fff; line-height: 1.1; margin-bottom: 20px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    }
+    .hero-title .highlight { color: var(--teal); }
+    .hero-desc { color: rgba(255,255,255,0.87); font-size: 1.05rem; margin-bottom: 36px; max-width: 500px; line-height: 1.7; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 36px; margin-top: 52px; padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero-stat-value {
+      font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900; color: #fff;
+    }
+    .hero-stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+    /* Video panel (right side) */
+    .hero-video-panel {
+      display: flex; flex-direction: column; gap: 20px; align-items: center;
+    }
+    .hero-video-card {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(12px); border-radius: 20px; overflow: hidden;
+      width: 100%; max-width: 320px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
+    }
+    .hero-video-card video {
+      width: 100%; display: block;
+      border-radius: 0;
+    }
+    .hero-video-caption {
+      text-align: center; padding: 14px 18px;
+      font-size: 0.82rem; color: rgba(255,255,255,0.75); letter-spacing: 0.05em;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      font-weight: 500;
+    }
+    .hero-kpi-row {
+      display: flex; gap: 12px; width: 100%; justify-content: center;
+    }
+    .hero-kpi {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(8px); border-radius: 12px; padding: 14px 18px; text-align: center; flex: 1;
+    }
+    .hero-kpi-num { font-family:'Montserrat',sans-serif; font-size: 1.5rem; font-weight: 900; color:#fff; }
+    .hero-kpi-num span { color: var(--teal); }
+    .hero-kpi-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
+
+    /* Mute toggle button */
+    /* Scene label */
+    .hero-scene-label {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      z-index: 10; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); font-weight: 500; pointer-events: none;
+      transition: opacity 0.6s;
+    }
+    .hero-mute-btn {
+      position: absolute; bottom: 32px; right: 32px; z-index: 10;
+      background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px); border-radius: 50%;
+      width: 44px; height: 44px; cursor: pointer; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s; font-size: 1.1rem;
+    }
+    .hero-mute-btn:hover { background: rgba(255,255,255,0.25); }
+
+    /* ── Marquee strip ── */
+    .marquee-strip {
+      background: var(--blue-dark); padding: 14px 0; overflow: hidden;
+    }
+    .marquee-track {
+      display: flex; gap: 60px; white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+    .marquee-item {
+      color: rgba(255,255,255,0.7); font-size: 0.82rem; font-weight: 500;
+      letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 12px;
+    }
+    .marquee-item::after { content: '◆'; color: var(--teal); font-size: 0.5rem; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── About ── */
+    #about { padding: 100px 0; background: var(--white); }
+    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-image-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      position: relative;
+    }
+    .about-img {
+      border-radius: 12px; overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    }
+    .about-img img { width: 100%; height: 200px; object-fit: cover; }
+    .about-img.tall img { height: 412px; }
+    .about-cert-badge {
+      position: absolute; bottom: -18px; left: 50%; transform: translateX(-50%);
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: 12px; padding: 12px 20px;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      display: flex; align-items: center; gap: 12px; white-space: nowrap;
+    }
+    .cert-icon { font-size: 1.6rem; }
+    .cert-text-main { font-weight: 700; font-size: 0.88rem; color: var(--blue-dark); }
+    .cert-text-sub { font-size: 0.73rem; color: var(--grey-text); }
+    .about-features { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 14px; }
+    .feature-icon {
+      width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
+      display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #fff;
+    }
+    .feature-title { font-weight: 700; font-size: 0.95rem; color: var(--blue-dark); }
+    .feature-desc { font-size: 0.85rem; color: var(--grey-text); margin-top: 2px; }
+
+    /* ── Products ── */
+    #products { padding: 100px 0; background: var(--grey-bg); }
+    .products-header { text-align: center; margin-bottom: 60px; }
+    .products-header .section-sub { margin: 12px auto 0; }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 24px;
+    }
+    .product-card {
+      background: var(--white); border-radius: 16px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid var(--border);
+      transition: all 0.25s; display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(21,101,192,0.15); border-color: var(--blue-light); }
+    .product-card-header {
+      padding: 28px 28px 20px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      position: relative; overflow: hidden;
+    }
+    .product-card-header::after {
+      content: ''; position: absolute; right: -20px; top: -20px;
+      width: 100px; height: 100px; border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .product-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .product-title { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fff; }
+    .product-subtitle { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin-top: 4px; }
+    .product-card-body { padding: 24px 28px; flex: 1; }
+    .product-desc { font-size: 0.9rem; color: var(--grey-text); margin-bottom: 18px; }
+    .product-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .product-specs li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.85rem; color: #3a4a5e;
+    }
+    .product-specs li::before {
+      content: '✓'; color: var(--teal); font-weight: 700;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .product-models {
+      margin-top: 18px; padding: 12px 16px;
+      background: var(--grey-bg); border-radius: 8px;
+      display: flex; gap: 8px; flex-wrap: wrap;
+    }
+    .model-tag {
+      background: var(--blue-dark); color: #fff; font-size: 0.72rem;
+      font-weight: 600; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em;
+    }
+
+    /* ── Applications ── */
+    #applications { padding: 100px 0; background: var(--white); }
+    .apps-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+    .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .app-card {
+      background: var(--grey-bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+      transition: all 0.2s;
+    }
+    .app-card:hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+    .app-card:hover .app-icon, .app-card:hover .app-name, .app-card:hover .app-desc { color: #fff; }
+    .app-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .app-name { font-weight: 700; font-size: 0.9rem; color: var(--blue-dark); margin-bottom: 4px; }
+    .app-desc { font-size: 0.8rem; color: var(--grey-text); }
+
+    /* ── Why Us ── */
+    #why { padding: 100px 0; background: var(--blue-dark); }
+    .why-header { text-align: center; margin-bottom: 60px; }
+    .why-header .section-label { color: var(--teal); }
+    .why-header .section-title { color: #fff; }
+    .why-header .section-sub { color: rgba(255,255,255,0.65); margin: 12px auto 0; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+    .why-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px; padding: 32px 24px; text-align: center;
+      transition: all 0.25s;
+    }
+    .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
+    .why-icon { font-size: 2.4rem; margin-bottom: 16px; }
+    .why-title { font-family: 'Montserrat', sans-serif; font-size: 1.05rem; font-weight: 800; color: #fff; margin-bottom: 10px; }
+    .why-desc { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+    /* ── Specs / Key products detail ── */
+    #specs { padding: 100px 0; background: var(--grey-bg); }
+    .specs-tabs { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; }
+    .tab-btn {
+      padding: 9px 22px; border-radius: 6px; font-size: 0.88rem; font-weight: 600;
+      border: 2px solid var(--border); background: var(--white); color: var(--blue-dark);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .tab-btn.active { background: var(--blue-light); color: #fff; border-color: var(--blue-light); }
+    .tab-btn:hover:not(.active) { border-color: var(--blue-light); color: var(--blue-light); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .spec-table-wrap {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+    }
+    .spec-block { background: var(--white); border-radius: 14px; padding: 28px; border: 1px solid var(--border); }
+    .spec-block-title {
+      font-family: 'Montserrat', sans-serif; font-size: 1rem; font-weight: 800;
+      color: var(--blue-dark); margin-bottom: 18px; padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    .spec-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid #f0f3f8; font-size: 0.875rem; }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row-key { color: var(--grey-text); font-weight: 500; }
+    .spec-row-val { color: var(--blue-dark); font-weight: 600; text-align: right; }
+
+    /* ── Gallery ── */
+    #gallery { padding: 100px 0; background: var(--white); }
+    .gallery-header { text-align: center; margin-bottom: 50px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 200px 200px;
+      gap: 12px;
+    }
+    .gallery-item {
+      border-radius: 10px; overflow: hidden; position: relative; cursor: pointer;
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item.span2 { grid-column: span 2; }
+    .gallery-item.row2 { grid-row: span 2; }
+    .gallery-overlay {
+      position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,37,64,0.7) 0%, transparent 50%);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    /* ── Contact ── */
+    #contact { padding: 100px 0; background: var(--grey-bg); }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: start; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+    .contact-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px;
+      transition: box-shadow 0.2s;
+    }
+    .contact-card:hover { box-shadow: 0 6px 24px rgba(21,101,192,0.12); }
+    .contact-card-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+    }
+    .contact-card-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; color: var(--teal); }
+    .contact-card-value { font-size: 0.9rem; font-weight: 600; color: var(--blue-dark); margin-top: 3px; }
+    .contact-card-sub { font-size: 0.8rem; color: var(--grey-text); margin-top: 2px; }
+    .contact-form {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 36px;
+    }
+    .form-title { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--blue-dark); margin-bottom: 24px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--blue-dark); margin-bottom: 6px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 11px 14px; border: 1.5px solid var(--border);
+      border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.9rem;
+      color: var(--blue-dark); transition: border-color 0.2s; background: #fafcff;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--blue-light); background: #fff; }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      width: 100%; padding: 14px; background: var(--blue-light); color: #fff;
+      border: none; border-radius: 8px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: all 0.2s; font-family: 'Inter', sans-serif;
+    }
+    .form-submit:hover { background: var(--blue-mid); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--blue-dark); padding: 60px 0 0;
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; }
+    .footer-brand { max-width: 300px; }
+    .footer-logo-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .footer-logo {
+      width: 44px; height: 44px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--teal), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-size: 1.2rem; font-weight: 900; color: #fff;
+    }
+    .footer-brand-name { font-family: 'Montserrat', sans-serif; font-weight: 800; color: #fff; line-height: 1.3; }
+    .footer-brand-name span { display: block; font-size: 0.65rem; font-weight: 400; color: var(--teal); letter-spacing: 0.08em; text-transform: uppercase; }
+    .footer-brand-desc { font-size: 0.85rem; line-height: 1.7; }
+    .footer-cert { margin-top: 20px; display: flex; gap: 12px; align-items: center; }
+    .cert-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 5px 12px; font-size: 0.72rem; font-weight: 600; color: var(--teal); }
+    .footer-col-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 800; color: #fff; margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links li a { font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links li a:hover { color: var(--teal); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem;
+    }
+    .footer-bottom a { color: var(--teal); }
+
+    /* ── Scroll top ── */
+    #scrolltop {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 46px; height: 46px; border-radius: 50%;
+      background: var(--blue-light); color: #fff; border: none; cursor: pointer;
+      box-shadow: 0 4px 18px rgba(30,136,229,.4);
+      display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+      opacity: 0; transform: translateY(10px);
+      transition: all 0.3s; pointer-events: none;
+    }
+    #scrolltop.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    #scrolltop:hover { background: var(--blue-mid); transform: translateY(-2px); }
+
+    /* ── Clients ── */
+    #clients { padding: 90px 0; background: var(--white); }
+    .clients-header { text-align: center; margin-bottom: 56px; }
+    .clients-header .section-sub { margin: 12px auto 0; }
+
+    /* client logo marquee */
+    .clients-marquee-wrap { overflow: hidden; margin-bottom: 60px; }
+    .clients-marquee-track {
+      display: flex; gap: 20px; width: max-content;
+      animation: cmarquee 35s linear infinite;
+    }
+    .clients-marquee-track:hover { animation-play-state: paused; }
+    @keyframes cmarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .client-pill {
+      display: flex; align-items: center; gap: 10px;
+      background: var(--grey-bg); border: 1.5px solid var(--border);
+      border-radius: 100px; padding: 8px 20px 8px 8px;
+      white-space: nowrap; transition: all 0.2s; flex-shrink: 0;
+    }
+    .client-pill:hover { border-color: var(--blue-light); background: #eaf2ff; }
+    .pill-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; font-weight: 800; color: #fff; flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+    .pill-name { font-size: 0.85rem; font-weight: 600; color: var(--blue-dark); }
+
+    /* client full grid */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 16px;
+    }
+    .client-card {
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 22px 16px 18px; text-align: center;
+      transition: all 0.25s; cursor: pointer; display: block;
+      text-decoration: none; position: relative; overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .client-card::after {
+      content: '↗ Visit Website';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, var(--blue-dark), rgba(10,37,64,0.88));
+      color: #fff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 10px 8px;
+      transform: translateY(100%); transition: transform 0.22s ease;
+    }
+    .client-card:hover::after { transform: translateY(0); }
+    .client-card:hover {
+      border-color: var(--blue-light);
+      box-shadow: 0 12px 36px rgba(21,101,192,0.15);
+      transform: translateY(-5px);
+    }
+    /* logo image wrapper — white box so logos show on any bg */
+    .client-logo-wrap {
+      width: 160px; height: 80px; margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      background: #fff; border-radius: 8px; padding: 8px 14px;
+      border: 1px solid #eef1f6;
+    }
+    .client-logo-wrap img {
+      max-width: 100%; max-height: 62px; width: auto; height: auto;
+      object-fit: contain; filter: grayscale(15%) opacity(0.88);
+      transition: filter 0.25s;
+    }
+    .client-card:hover .client-logo-wrap img { filter: grayscale(0%) opacity(1); }
+    /* fallback badge shown only on img error */
+    .client-logo-badge {
+      width: 64px; height: 64px; border-radius: 14px; margin: 0 auto 14px;
+      display: none; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 900;
+      color: #fff; letter-spacing: 0.03em; text-align: center; line-height: 1.2;
+    }
+    .client-full-name {
+      font-size: 0.82rem; font-weight: 700; color: var(--blue-dark); line-height: 1.3;
+    }
+    .client-sector {
+      font-size: 0.72rem; color: var(--grey-text); margin-top: 4px;
+    }
+
+    /* stats bar */
+    .stats-bar {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+      border-radius: 18px; padding: 40px 48px;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; margin-bottom: 60px;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Montserrat', sans-serif; font-size: 2.4rem; font-weight: 900;
+      color: #fff; line-height: 1;
+    }
+    .stat-num span { color: var(--teal); }
+    .stat-label { font-size: 0.82rem; color: rgba(255,255,255,0.65); margin-top: 6px; }
+    .stat-divider { width: 1px; background: rgba(255,255,255,0.15); margin: auto; }
+    @media (max-width: 700px) {
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-video-panel { display: none; }
+      .about-inner { grid-template-columns: 1fr; }
+      .about-image-grid { display: none; }
+      .apps-inner { grid-template-columns: 1fr; }
+      .spec-table-wrap { grid-template-columns: 1fr; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item.span2 { grid-column: span 1; }
+      .gallery-item.row2 { grid-row: span 1; }
+      .gallery-item img { height: 180px !important; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="nav-brand">
+      <div class="nav-logo">PE</div>
+      <div class="nav-name">
+        Perfect Engineering Corporation
+        <span>ISO 9001-2008 Certified</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#clients">Clients</a></li>
+      <li><a href="#applications">Applications</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="home">
+
+  <!-- Animated canvas background (4 scenes: thermal / dam / water treatment / nuclear) -->
+  <div class="hero-video-wrap">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <!-- Scene indicator -->
+  <div class="hero-scene-label" id="heroSceneLabel"></div>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- LEFT: text content -->
+      <div>
+        <div class="hero-badge">
+          <div class="hero-badge-dot"></div>
+          <span>ISO 9001-2008 Certified · JAS-ANZ · IAF</span>
+        </div>
+        <h1 class="hero-title">
+          Engineering<br>
+          <span class="highlight">Safety</span> &amp;
+          <span class="highlight">Reliability</span><br>
+          Since Over a Decade
+        </h1>
+        <p class="hero-desc">
+          India's trusted manufacturer of Chlorine Handling Equipment, Safety Systems,
+          FRP Ducting, and Industrial Blowers — serving water treatment, power, and chemical industries nationwide.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Products ↓</a>
+          <a href="#contact" class="btn btn-outline">Get a Quote</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value">10+</div>
+            <div class="hero-stat-label">Years of Experience</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">200+</div>
+            <div class="hero-stat-label">Installations Across India</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">24+</div>
+            <div class="hero-stat-label">Major Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: looping video panel + KPI cards -->
+      <div class="hero-video-panel">
+        <div class="hero-video-card">
+          <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.14.28 PM.jpeg"
+               alt="PEC Installation" style="width:100%;display:block;border-radius:0;max-height:280px;object-fit:cover;"/>
+          <div class="hero-video-caption">PEC · Chlorine &amp; Safety Systems Manufacturing</div>
+        </div>
+        <div class="hero-kpi-row">
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">8<span>+</span></div>
+            <div class="hero-kpi-label">Product Lines</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">15<span>+</span></div>
+            <div class="hero-kpi-label">States Served</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num"><span>ISO</span></div>
+            <div class="hero-kpi-label">9001-2008</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MARQUEE STRIP ══════════════ -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span class="marquee-item">Vacuum Type Chlorinators</span>
+    <span class="marquee-item">Chlorine Leak Absorption Systems</span>
+    <span class="marquee-item">Chlorine Leak Detectors</span>
+    <span class="marquee-item">Industrial FRP Blowers</span>
+    <span class="marquee-item">FRP Ducting</span>
+    <span class="marquee-item">FRP Butterfly Valves</span>
+    <span class="marquee-item">FRP Dampers</span>
+    <span class="marquee-item">ISO 9001-2008 Certified</span>
+    <span class="marquee-item">Vacuum Type Chlorinators</span>
+    <span class="marquee-item">Chlorine Leak Absorption Systems</span>
+    <span class="marquee-item">Chlorine Leak Detectors</span>
+    <span class="marquee-item">Industrial FRP Blowers</span>
+    <span class="marquee-item">FRP Ducting</span>
+    <span class="marquee-item">FRP Butterfly Valves</span>
+    <span class="marquee-item">FRP Dampers</span>
+    <span class="marquee-item">ISO 9001-2008 Certified</span>
+  </div>
+</div>
+
+<!-- ══════════════ CLIENTS ══════════════ -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-header">
+      <p class="section-label">Trusted By</p>
+      <h2 class="section-title">Our Prestigious Clients</h2>
+      <p class="section-sub">Serving India's leading public sector undertakings, multinational corporations, and private enterprises across power, oil &amp; gas, chemicals, and infrastructure sectors.</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">200<span>+</span></div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">24<span>+</span></div>
+        <div class="stat-label">Major Clients</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">15<span>+</span></div>
+        <div class="stat-label">States Covered</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">10<span>+</span></div>
+        <div class="stat-label">Years of Trust</div>
+      </div>
+    </div>
+
+    <div class="clients-marquee-wrap">
+      <div class="clients-marquee-track">
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">NT</div><span class="pill-name">NTPC Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#0a2540">Bh</div><span class="pill-name">Bharat Heavy Electricals</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#e65100">La</div><span class="pill-name">Larsen &amp; Toubro</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#2e7d32">Oi</div><span class="pill-name">Oil &amp; Natural Gas Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#00838f">GA</div><span class="pill-name">GAIL India Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">In</div><span class="pill-name">Indian Oil Corporation</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">Bh</div><span class="pill-name">Bharat Petroleum Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#004d40">Hi</div><span class="pill-name">Hindustan Petroleum</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1b5e20">St</div><span class="pill-name">Steel Authority of India</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#4e342e">NM</div><span class="pill-name">NMDC Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Nu</div><span class="pill-name">Nuclear Power Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#283593">En</div><span class="pill-name">Engineers India Ltd</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#00695c">De</div><span class="pill-name">Delhi Jal Board</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#37474f">ME</div><span class="pill-name">MECON Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#558b2f">Ra</div><span class="pill-name">Rashtriya Chemicals &amp; Fert.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">Na</div><span class="pill-name">National Fertilizers Ltd</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Ta</div><span class="pill-name">Tata Power</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#e65100">Ad</div><span class="pill-name">Adani Group</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#4527a0">Hi</div><span class="pill-name">Hindustan Zinc</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#6a1b9a">De</div><span class="pill-name">Deepak Fertilisers</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#283593">Po</div><span class="pill-name">Power Grid Corporation</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#3e2723">Co</div><span class="pill-name">Coal India Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#880e4f">Re</div><span class="pill-name">Reliance Industries</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#2e7d32">IF</div><span class="pill-name">IFFCO</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">NT</div><span class="pill-name">NTPC Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#0a2540">Bh</div><span class="pill-name">Bharat Heavy Electricals</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#e65100">La</div><span class="pill-name">Larsen &amp; Toubro</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#2e7d32">Oi</div><span class="pill-name">Oil &amp; Natural Gas Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#00838f">GA</div><span class="pill-name">GAIL India Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">In</div><span class="pill-name">Indian Oil Corporation</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">Bh</div><span class="pill-name">Bharat Petroleum Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#004d40">Hi</div><span class="pill-name">Hindustan Petroleum</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1b5e20">St</div><span class="pill-name">Steel Authority of India</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#4e342e">NM</div><span class="pill-name">NMDC Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Nu</div><span class="pill-name">Nuclear Power Corp.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#283593">En</div><span class="pill-name">Engineers India Ltd</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#00695c">De</div><span class="pill-name">Delhi Jal Board</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#37474f">ME</div><span class="pill-name">MECON Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#558b2f">Ra</div><span class="pill-name">Rashtriya Chemicals &amp; Fert.</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#1565c0">Na</div><span class="pill-name">National Fertilizers Ltd</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Ta</div><span class="pill-name">Tata Power</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#e65100">Ad</div><span class="pill-name">Adani Group</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#4527a0">Hi</div><span class="pill-name">Hindustan Zinc</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#6a1b9a">De</div><span class="pill-name">Deepak Fertilisers</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#283593">Po</div><span class="pill-name">Power Grid Corporation</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#3e2723">Co</div><span class="pill-name">Coal India Limited</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#880e4f">Re</div><span class="pill-name">Reliance Industries</span></div>
+        <div class="client-pill"><div class="pill-dot" style="background:#2e7d32">IF</div><span class="pill-name">IFFCO</span></div>
+      </div>
+    </div>
+
+    <div class="clients-grid">
+      <a class="client-card" href="https://www.ntpc.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/NTPC_Logo.svg" alt="NTPC Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#1565c0">NTPC</div><div class="client-full-name">NTPC Limited</div><div class="client-sector">Power Generation</div></a>
+        <a class="client-card" href="https://www.bhel.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/BHEL_logo.svg" alt="Bharat Heavy Electricals" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#0a2540">BHEL</div><div class="client-full-name">Bharat Heavy Electricals</div><div class="client-sector">Heavy Engineering</div></a>
+        <a class="client-card" href="https://www.larsentoubro.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/L%26T_Logo.svg" alt="Larsen &amp; Toubro" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#e65100">L&T</div><div class="client-full-name">Larsen &amp; Toubro</div><div class="client-sector">Engineering &amp; Construction</div></a>
+        <a class="client-card" href="https://www.ongcindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/ONGC_Logo.svg" alt="Oil &amp; Natural Gas Corp." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#2e7d32">ONGC</div><div class="client-full-name">Oil &amp; Natural Gas Corp.</div><div class="client-sector">Oil &amp; Gas</div></a>
+        <a class="client-card" href="https://www.gailonline.com" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#00838f;display:flex">GAIL</div><div class="client-full-name">GAIL India Limited</div><div class="client-sector">Natural Gas</div></a>
+        <a class="client-card" href="https://www.iocl.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Indian_Oil_Logo.svg" alt="Indian Oil Corporation" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#b71c1c">IOCL</div><div class="client-full-name">Indian Oil Corporation</div><div class="client-sector">Petroleum &amp; Refining</div></a>
+        <a class="client-card" href="https://www.bharatpetroleum.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bharat_Petroleum_logo.svg" alt="Bharat Petroleum Corp." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#1565c0">BPCL</div><div class="client-full-name">Bharat Petroleum Corp.</div><div class="client-sector">Oil &amp; Gas</div></a>
+        <a class="client-card" href="https://www.hindustanpetroleum.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hindustan_Petroleum_logo.svg" alt="Hindustan Petroleum" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#004d40">HPCL</div><div class="client-full-name">Hindustan Petroleum</div><div class="client-sector">Petroleum</div></a>
+        <a class="client-card" href="https://www.sail.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SAIL_Logo.svg" alt="Steel Authority of India" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#1b5e20">SAIL</div><div class="client-full-name">Steel Authority of India</div><div class="client-sector">Steel &amp; Metals</div></a>
+        <a class="client-card" href="https://www.nmdc.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/National_Mineral_Development_Corporation.svg" alt="NMDC Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#4e342e">NMDC</div><div class="client-full-name">NMDC Limited</div><div class="client-sector">Mining &amp; Minerals</div></a>
+        <a class="client-card" href="https://www.npcil.nic.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/NPCIL_Logo.svg" alt="Nuclear Power Corp." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#b71c1c">NPCIL</div><div class="client-full-name">Nuclear Power Corp.</div><div class="client-sector">Nuclear Energy</div></a>
+        <a class="client-card" href="https://www.engineersindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Engineers_India_Logo.svg" alt="Engineers India Ltd" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#283593">EIL</div><div class="client-full-name">Engineers India Ltd</div><div class="client-sector">Engineering Consultancy</div></a>
+        <a class="client-card" href="https://www.delhijalboard.nic.in" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#00695c;display:flex">DJB</div><div class="client-full-name">Delhi Jal Board</div><div class="client-sector">Water Utility</div></a>
+        <a class="client-card" href="https://www.meconlimited.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/MECON_logo.svg" alt="MECON Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#37474f">MECON</div><div class="client-full-name">MECON Limited</div><div class="client-sector">Engineering &amp; Consulting</div></a>
+        <a class="client-card" href="https://www.rcfltd.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Rashtriya_Chemicals_%26_Fertilizers_Logo.svg" alt="Rashtriya Chemicals &amp; Fert." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#558b2f">RCF</div><div class="client-full-name">Rashtriya Chemicals &amp; Fert.</div><div class="client-sector">Fertilizers &amp; Chemicals</div></a>
+        <a class="client-card" href="https://www.nationalfertilizers.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/National_Fertilizers_Logo.svg" alt="National Fertilizers Ltd" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#1565c0">NFL</div><div class="client-full-name">National Fertilizers Ltd</div><div class="client-sector">Fertilizers</div></a>
+        <a class="client-card" href="https://www.tatapower.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tata_Power_Logo.svg" alt="Tata Power" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#b71c1c">Tata</div><div class="client-full-name">Tata Power</div><div class="client-sector">Power Generation</div></a>
+        <a class="client-card" href="https://www.adani.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Adani_logo_2012.svg" alt="Adani Group" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#e65100">ADANI</div><div class="client-full-name">Adani Group</div><div class="client-sector">Conglomerate</div></a>
+        <a class="client-card" href="https://www.hzlindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/HZL_Logo.png" alt="Hindustan Zinc" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#4527a0">HZL</div><div class="client-full-name">Hindustan Zinc</div><div class="client-sector">Zinc &amp; Lead</div></a>
+        <a class="client-card" href="https://www.dfpcl.com" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#6a1b9a;display:flex">DFPCL</div><div class="client-full-name">Deepak Fertilisers</div><div class="client-sector">Fertilizers &amp; Chemicals</div></a>
+        <a class="client-card" href="https://www.powergridindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Power_Grid_Corporation_of_India_Logo.svg" alt="Power Grid Corporation" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#283593">PGCIL</div><div class="client-full-name">Power Grid Corporation</div><div class="client-sector">Power Transmission</div></a>
+        <a class="client-card" href="https://www.coalindia.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Coal_India_Logo.svg" alt="Coal India Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#3e2723">CIL</div><div class="client-full-name">Coal India Limited</div><div class="client-sector">Coal Mining</div></a>
+        <a class="client-card" href="https://www.ril.com" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#880e4f;display:flex">RIL</div><div class="client-full-name">Reliance Industries</div><div class="client-sector">Conglomerate</div></a>
+        <a class="client-card" href="https://www.iffco.in" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#2e7d32;display:flex">IFFCO</div><div class="client-full-name">IFFCO</div><div class="client-sector">Fertilizers Cooperative</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-image-grid">
+        <div class="about-img tall">
+          <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.09.57 PM.jpeg" alt="Perfect Engineering manufacturing facility" loading="lazy" />
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="about-img">
+            <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.12.17 PM.jpeg" alt="Chlorinator installation" loading="lazy" />
+          </div>
+          <div class="about-img">
+            <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.13.43 PM.jpeg" alt="FRP blower system" loading="lazy" />
+          </div>
+        </div>
+        <div class="about-cert-badge">
+          <div class="cert-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.43 9.71 2.25 12 2.25c2.291 0 4.545.18 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg></div>
+          <div>
+            <div class="cert-text-main">ISO 9001-2008</div>
+            <div class="cert-text-sub">JAS-ANZ · IAF Accredited</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">Delhi-Based Industry Leader in Chlorine Safety</h2>
+        <p class="section-sub">
+          Perfect Engineering Corporation is an ISO 9001-2008 certified manufacturer headquartered in Naveen Shahdara, Delhi, with a production facility in Sahibabad Industrial Area, Ghaziabad. We design, manufacture, and supply critical chlorine handling and safety equipment for water treatment plants, power stations, fertilizer plants, and chemical industries across India.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg></div>
+            <div>
+              <div class="feature-title">In-House Manufacturing</div>
+              <div class="feature-desc">State-of-the-art production facility with precision engineering and quality control at every stage.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div>
+              <div class="feature-title">Certified Quality</div>
+              <div class="feature-desc">ISO 9001-2008 certified processes ensuring consistent product quality and international standards compliance.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+            <div>
+              <div class="feature-title">Dedicated Support</div>
+              <div class="feature-desc">Expert technical team providing installation, commissioning, and after-sales service across India.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg></div>
+            <div>
+              <div class="feature-title">Pan-India Presence</div>
+              <div class="feature-desc">Serving clients across 15+ states with timely delivery and comprehensive project execution capabilities.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PRODUCTS ══════════════ -->
+<section id="products">
+  <div class="container">
+    <div class="products-header">
+      <p class="section-label">Our Products</p>
+      <h2 class="section-title">Complete Range of Chlorine Safety Equipment</h2>
+      <p class="section-sub">From vacuum-operated chlorinators to corrosion-resistant FRP systems — engineered for reliability in India's most demanding environments.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.798-1.442 2.798H4.24c-1.47 0-2.44-1.798-1.442-2.798L4.2 15.3"/></svg></div>
+          <div class="product-title">Vacuum Type Chlorinator</div>
+          <div class="product-subtitle">Direct &amp; Solution Feed Systems</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">Precision vacuum-operated chlorinators for safe, accurate chlorine dosing in water treatment plants, swimming pools, and industrial processes.</p>
+          <ul class="product-specs">
+            <li>Capacity: 2 g/hr to 10 kg/hr</li>
+            <li>Operating vacuum: 250–350 mm Hg</li>
+            <li>Wetted parts in PVC/CPVC</li>
+            <li>Direct &amp; solution feed options</li>
+            <li>Built-in vacuum regulator</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">VCC-2</span>
+            <span class="model-tag">VCC-10</span>
+            <span class="model-tag">VCC-200</span>
+            <span class="model-tag">VCC-1000</span>
+            <span class="model-tag">VCC-10000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+          <div class="product-title">Chlorine Leak Absorption System</div>
+          <div class="product-subtitle">Emergency &amp; Continuous Scrubbing</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">FRP scrubbing systems with caustic soda neutralisation for safe containment of chlorine leaks in storage and handling areas.</p>
+          <ul class="product-specs">
+            <li>Handling capacity: 25 to 500 kg/hr</li>
+            <li>Fan capacity: 100 to 10,000 m³/hr</li>
+            <li>FRP construction for corrosion resistance</li>
+            <li>Automatic &amp; manual operation modes</li>
+            <li>CPVC/FRP tower packing</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">CLS-10</span>
+            <span class="model-tag">CLS-25</span>
+            <span class="model-tag">CLS-100</span>
+            <span class="model-tag">CLS-500</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.789M12 12h.008v.008H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/></svg></div>
+          <div class="product-title">Chlorine Leak Detector</div>
+          <div class="product-subtitle">Electrochemical Sensing Systems</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">Multi-point electrochemical chlorine gas detectors with alarm and auto-activation of absorption systems for comprehensive facility safety.</p>
+          <ul class="product-specs">
+            <li>Detection range: 0–10 ppm / 0–20 ppm</li>
+            <li>Response time: &lt; 30 seconds</li>
+            <li>Visual &amp; audible alarms</li>
+            <li>Relay output for system interlock</li>
+            <li>Multi-point monitoring (up to 16 zones)</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">CLD-1</span>
+            <span class="model-tag">CLD-4</span>
+            <span class="model-tag">CLD-8</span>
+            <span class="model-tag">CLD-16</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.249 2.249 0 0017.5 15H16.5a2.249 2.249 0 00-1.988 1.21l-.006.013A2.249 2.249 0 0012.5 17.5h-1a2.249 2.249 0 00-1.943 1.113l-.032.059m9.12-4.636a9.005 9.005 0 01-9.12 4.636"/></svg></div>
+          <div class="product-title">Industrial FRP Blowers</div>
+          <div class="product-subtitle">Centrifugal &amp; Axial Flow</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">Corrosion-resistant FRP blowers for chemical fume exhaust, scrubbing systems, and industrial ventilation in aggressive environments.</p>
+          <ul class="product-specs">
+            <li>Capacity: 100 to 50,000 m³/hr</li>
+            <li>Static pressure: 50–1,500 mm WC</li>
+            <li>Speed: 960–2,900 RPM</li>
+            <li>Material: FRP / MS / SS</li>
+            <li>MOC: Polypropylene, FRP, HDPE</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">FRP-CF</span>
+            <span class="model-tag">FRP-AF</span>
+            <span class="model-tag">PP-BL</span>
+            <span class="model-tag">SS-BL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25"/></svg></div>
+          <div class="product-title">FRP Ducting</div>
+          <div class="product-subtitle">Round, Rectangular &amp; Custom Profiles</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">Hand-laid and machine-wound FRP ducts for chemical fume extraction and ventilation in corrosive atmospheres — lightweight and durable.</p>
+          <ul class="product-specs">
+            <li>Diameter: 100 mm to 2,000 mm</li>
+            <li>Wall thickness as per IS/BS standards</li>
+            <li>Joints: flanged, socket &amp; spigot</li>
+            <li>Temperature: up to 120°C continuous</li>
+            <li>Custom profiles and fittings available</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">FRP-RD</span>
+            <span class="model-tag">FRP-SQ</span>
+            <span class="model-tag">FRP-EL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-card-header">
+          <div class="product-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+          <div class="product-title">FRP Dampers &amp; Butterfly Valves</div>
+          <div class="product-subtitle">Flow Control for Corrosive Media</div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-desc">FRP and CPVC butterfly valves and dampers for precise flow regulation of corrosive gases and liquids in chemical process industries.</p>
+          <ul class="product-specs">
+            <li>Size range: 25 mm to 1,200 mm</li>
+            <li>MOC: FRP, CPVC, PP, PVDF</li>
+            <li>Manual, gear &amp; pneumatic actuation</li>
+            <li>Temperature: –20°C to 150°C</li>
+            <li>Pressure rating: up to 10 kg/cm²</li>
+          </ul>
+          <div class="product-models">
+            <span class="model-tag">BFV-FRP</span>
+            <span class="model-tag">BFV-CPVC</span>
+            <span class="model-tag">DMP-FRP</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ APPLICATIONS ══════════════ -->
+<section id="applications">
+  <div class="container">
+    <div class="apps-inner">
+      <div>
+        <p class="section-label">Applications</p>
+        <h2 class="section-title">Industries We Serve</h2>
+        <p class="section-sub">
+          Our equipment is deployed in the most demanding industrial environments — from municipal water treatment to nuclear power stations — ensuring safe chlorine handling and corrosion-resistant operations.
+        </p>
+        <div style="margin-top:32px">
+          <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.15.02 PM.jpeg" alt="Industrial installation" style="border-radius:14px;width:100%;object-fit:cover;max-height:280px;box-shadow:0 12px 40px rgba(0,0,0,0.14)" loading="lazy" />
+        </div>
+      </div>
+      <div class="apps-grid">
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"/></svg></div>
+          <div class="app-name">Water Treatment</div>
+          <div class="app-desc">Municipal WTPs, STPs, and industrial water treatment facilities requiring precise chlorine dosing.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg></div>
+          <div class="app-name">Power Generation</div>
+          <div class="app-desc">Thermal and nuclear power stations — cooling water chlorination and chemical fume control.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.798-1.442 2.798H4.24c-1.47 0-2.44-1.798-1.442-2.798L4.2 15.3"/></svg></div>
+          <div class="app-name">Chemical Industry</div>
+          <div class="app-desc">Chlor-alkali plants, chemical process industries and specialty chemical manufacturers.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
+          <div class="app-name">Pharmaceuticals</div>
+          <div class="app-desc">Pharma manufacturing facilities needing sterile water chlorination and process gas handling.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <div class="app-name">Fertilizer Plants</div>
+          <div class="app-desc">Nitrogen, phosphatic, and complex fertilizer plants with corrosive gas handling requirements.</div>
+        </div>
+        <div class="app-card">
+          <div class="app-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="26" height="26"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/></svg></div>
+          <div class="app-name">Effluent Treatment</div>
+          <div class="app-desc">Industrial ETPs and sewage treatment plants requiring corrosion-resistant equipment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ WHY US ══════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <p class="section-label">Why Perfect Engineering</p>
+      <h2 class="section-title">The Difference That Matters</h2>
+      <p class="section-sub">Built on a foundation of engineering excellence, rigorous quality standards, and a commitment to customer success.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.43 9.71 2.25 12 2.25c2.291 0 4.545.18 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg></div>
+        <div class="why-title">ISO 9001-2008 Certified</div>
+        <div class="why-desc">JAS-ANZ and IAF accredited quality management system ensuring consistent, internationally-benchmarked product quality.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg></div>
+        <div class="why-title">In-House Manufacturing</div>
+        <div class="why-desc">Complete design-to-delivery control with our own manufacturing facility in Ghaziabad's industrial zone.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3"/></svg></div>
+        <div class="why-title">Custom Engineering</div>
+        <div class="why-desc">Bespoke solutions designed to exact site specifications — flow rates, materials, temperatures, and footprint.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.798-1.442 2.798H4.24c-1.47 0-2.44-1.798-1.442-2.798L4.2 15.3"/></svg></div>
+        <div class="why-title">Proven in the Field</div>
+        <div class="why-desc">Over 200 successful installations across India's most critical infrastructure — power, defence, and water utilities.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <div class="why-title">After-Sales Service</div>
+        <div class="why-desc">Comprehensive maintenance contracts, spare parts supply, and rapid-response field service teams.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg></div>
+        <div class="why-title">On-Time Delivery</div>
+        <div class="why-desc">Disciplined project management and well-stocked inventory enabling reliable delivery timelines for every order.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SPECS ══════════════ -->
+<section id="specs">
+  <div class="container">
+    <p class="section-label">Technical Specifications</p>
+    <h2 class="section-title">Product Specifications</h2>
+    <p class="section-sub" style="margin-bottom:40px">Detailed technical data for our core product range — contact us for custom specifications.</p>
+
+    <div class="specs-tabs">
+      <button class="tab-btn active" onclick="showTab('chlorinator')">Vacuum Chlorinator</button>
+      <button class="tab-btn" onclick="showTab('absorption')">Absorption System</button>
+      <button class="tab-btn" onclick="showTab('blower')">FRP Blowers</button>
+    </div>
+
+    <div id="tab-chlorinator" class="tab-content active">
+      <div class="spec-table-wrap">
+        <div class="spec-block">
+          <div class="spec-block-title">Operating Parameters</div>
+          <div class="spec-row"><span class="spec-row-key">Chlorine Feed Rate</span><span class="spec-row-val">2 g/hr – 10 kg/hr</span></div>
+          <div class="spec-row"><span class="spec-row-key">Operating Vacuum</span><span class="spec-row-val">250–350 mm Hg</span></div>
+          <div class="spec-row"><span class="spec-row-key">Inlet Gas Pressure</span><span class="spec-row-val">10–14 kg/cm²</span></div>
+          <div class="spec-row"><span class="spec-row-key">Water Supply Pressure</span><span class="spec-row-val">Min 1.5 kg/cm²</span></div>
+          <div class="spec-row"><span class="spec-row-key">Solution Concentration</span><span class="spec-row-val">Up to 3,500 mg/L</span></div>
+          <div class="spec-row"><span class="spec-row-key">Operating Temperature</span><span class="spec-row-val">10°C – 45°C</span></div>
+        </div>
+        <div class="spec-block">
+          <div class="spec-block-title">Construction &amp; Materials</div>
+          <div class="spec-row"><span class="spec-row-key">Body Material</span><span class="spec-row-val">FRP / Polypropylene</span></div>
+          <div class="spec-row"><span class="spec-row-key">Wetted Parts</span><span class="spec-row-val">PVC / CPVC / PVDF</span></div>
+          <div class="spec-row"><span class="spec-row-key">Diaphragm</span><span class="spec-row-val">PTFE / Neoprene</span></div>
+          <div class="spec-row"><span class="spec-row-key">O-Rings</span><span class="spec-row-val">EPDM / Viton</span></div>
+          <div class="spec-row"><span class="spec-row-key">Feed Mode</span><span class="spec-row-val">Direct Feed / Solution Feed</span></div>
+          <div class="spec-row"><span class="spec-row-key">Control</span><span class="spec-row-val">Manual / Automatic (4–20 mA)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-absorption" class="tab-content">
+      <div class="spec-table-wrap">
+        <div class="spec-block">
+          <div class="spec-block-title">System Capacity</div>
+          <div class="spec-row"><span class="spec-row-key">Chlorine Handling</span><span class="spec-row-val">25 to 500 kg/hr</span></div>
+          <div class="spec-row"><span class="spec-row-key">Fan Capacity</span><span class="spec-row-val">100 to 10,000 m³/hr</span></div>
+          <div class="spec-row"><span class="spec-row-key">Static Pressure</span><span class="spec-row-val">50–150 mm WC</span></div>
+          <div class="spec-row"><span class="spec-row-key">Scrubbing Efficiency</span><span class="spec-row-val">&gt;99.9% Cl₂ removal</span></div>
+          <div class="spec-row"><span class="spec-row-key">NaOH Concentration</span><span class="spec-row-val">5–15% w/v</span></div>
+          <div class="spec-row"><span class="spec-row-key">Response Time</span><span class="spec-row-val">&lt; 30 seconds (auto)</span></div>
+        </div>
+        <div class="spec-block">
+          <div class="spec-block-title">Construction</div>
+          <div class="spec-row"><span class="spec-row-key">Tower Material</span><span class="spec-row-val">FRP (hand lay-up)</span></div>
+          <div class="spec-row"><span class="spec-row-key">Packing</span><span class="spec-row-val">CPVC / PP Raschig Rings</span></div>
+          <div class="spec-row"><span class="spec-row-key">Fan Material</span><span class="spec-row-val">FRP / Polypropylene</span></div>
+          <div class="spec-row"><span class="spec-row-key">Pump MOC</span><span class="spec-row-val">CPVC / PP / PVDF</span></div>
+          <div class="spec-row"><span class="spec-row-key">Control Panel</span><span class="spec-row-val">PLC / Relay-based</span></div>
+          <div class="spec-row"><span class="spec-row-key">Mode</span><span class="spec-row-val">Emergency / Continuous</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-blower" class="tab-content">
+      <div class="spec-table-wrap">
+        <div class="spec-block">
+          <div class="spec-block-title">Performance Data</div>
+          <div class="spec-row"><span class="spec-row-key">Type</span><span class="spec-row-val">Centrifugal / Axial</span></div>
+          <div class="spec-row"><span class="spec-row-key">Air Volume</span><span class="spec-row-val">100 to 50,000 m³/hr</span></div>
+          <div class="spec-row"><span class="spec-row-key">Static Pressure</span><span class="spec-row-val">50–1,500 mm WC</span></div>
+          <div class="spec-row"><span class="spec-row-key">Speed</span><span class="spec-row-val">960–2,900 RPM</span></div>
+          <div class="spec-row"><span class="spec-row-key">Drive</span><span class="spec-row-val">Direct / Belt / VFD</span></div>
+          <div class="spec-row"><span class="spec-row-key">Temperature</span><span class="spec-row-val">Up to 120°C continuous</span></div>
+        </div>
+        <div class="spec-block">
+          <div class="spec-block-title">Materials &amp; Construction</div>
+          <div class="spec-row"><span class="spec-row-key">Impeller MOC</span><span class="spec-row-val">FRP / PP / SS 316</span></div>
+          <div class="spec-row"><span class="spec-row-key">Casing MOC</span><span class="spec-row-val">FRP / MS / SS 304</span></div>
+          <div class="spec-row"><span class="spec-row-key">Shaft</span><span class="spec-row-val">Stainless Steel 316</span></div>
+          <div class="spec-row"><span class="spec-row-key">Seal</span><span class="spec-row-val">Mechanical / Gland Packing</span></div>
+          <div class="spec-row"><span class="spec-row-key">Bearing</span><span class="spec-row-val">Heavy-duty anti-friction</span></div>
+          <div class="spec-row"><span class="spec-row-key">Standards</span><span class="spec-row-val">IS 14010 / ISO 13349</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ GALLERY ══════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="gallery-header">
+      <p class="section-label">Installation Gallery</p>
+      <h2 class="section-title">Our Work in the Field</h2>
+      <p class="section-sub" style="margin:12px auto 0">Real installations at client sites across India — from water treatment plants to power stations.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item span2 row2">
+        <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.09.58 PM.jpeg" alt="Large installation site" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.16.33 PM.jpeg" alt="Ducting system" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.16.50 PM.jpeg" alt="Safety equipment" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+      <div class="gallery-item">
+        <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.14.28 PM.jpeg" alt="Equipment overview" loading="lazy" />
+        <div class="gallery-overlay"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's Discuss Your Requirements</h2>
+        <p class="section-sub">Our technical team is ready to help you find the right solution. Reach out for product enquiries, custom specifications, or project consultation.</p>
+
+        <div class="contact-info-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg></div>
+            <div>
+              <div class="contact-card-label">Registered Office</div>
+              <div class="contact-card-value">Perfect Engineering Corporation</div>
+              <div class="contact-card-sub">1/11423, Subhash Park Ext., Naveen Shahdara, Delhi – 110032</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg></div>
+            <div>
+              <div class="contact-card-label">Manufacturing Unit</div>
+              <div class="contact-card-value">Sahibabad Industrial Area</div>
+              <div class="contact-card-sub">20/6/8, Site IV, Ghaziabad, Uttar Pradesh</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
+            <div>
+              <div class="contact-card-label">Phone / WhatsApp</div>
+              <div class="contact-card-value"><a href="tel:09717899201" style="color:inherit">09717899201</a></div>
+              <div class="contact-card-sub">Mon–Sat, 9:00 AM – 6:00 PM IST</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
+            <div>
+              <div class="contact-card-label">Email</div>
+              <div class="contact-card-value"><a href="mailto:perfectengineeringcorporation@gmail.com" style="color:inherit">perfectengineeringcorporation@gmail.com</a></div>
+              <div class="contact-card-sub">We respond within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" width="22" height="22"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/></svg></div>
+            <div>
+              <div class="contact-card-label">Website</div>
+              <div class="contact-card-value"><a href="http://www.perfectenggcorp.com" target="_blank" style="color:inherit">www.perfectenggcorp.com</a></div>
+              <div class="contact-card-sub">Product catalogue &amp; company profile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <div class="form-title">Send Us an Enquiry</div>
+        <form onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="fcompany">Company</label>
+              <input type="text" id="fcompany" name="company" placeholder="Your organisation" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="femail">Email *</label>
+              <input type="email" id="femail" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone</label>
+              <input type="tel" id="fphone" name="phone" placeholder="+91 XXXXX XXXXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fproduct">Product Interest</label>
+            <select id="fproduct" name="product">
+              <option value="">Select a product…</option>
+              <option>Vacuum Type Chlorinator</option>
+              <option>Chlorine Leak Absorption System</option>
+              <option>Chlorine Leak Detector</option>
+              <option>Industrial FRP Blowers</option>
+              <option>FRP Ducting</option>
+              <option>FRP Dampers / Butterfly Valves</option>
+              <option>Multiple Products / Complete System</option>
+              <option>Other / General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Message *</label>
+            <textarea id="fmsg" name="message" placeholder="Please describe your requirements — capacity, application, site conditions…" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <div class="footer-logo">PE</div>
+          <div class="footer-brand-name">
+            Perfect Engineering Corporation
+            <span>ISO 9001-2008 Certified</span>
+          </div>
+        </div>
+        <p class="footer-brand-desc">
+          India's trusted manufacturer of chlorine handling equipment, safety systems, FRP blowers, and ducting — serving critical infrastructure since over a decade.
+        </p>
+        <div class="footer-cert">
+          <span class="cert-pill">ISO 9001-2008</span>
+          <span class="cert-pill">JAS-ANZ</span>
+          <span class="cert-pill">IAF</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Products</div>
+        <ul class="footer-links">
+          <li><a href="#products">Vacuum Chlorinators</a></li>
+          <li><a href="#products">Absorption Systems</a></li>
+          <li><a href="#products">Leak Detectors</a></li>
+          <li><a href="#products">FRP Blowers</a></li>
+          <li><a href="#products">FRP Ducting</a></li>
+          <li><a href="#products">Dampers &amp; Valves</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#clients">Our Clients</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#specs">Specifications</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="tel:09717899201">09717899201</a></li>
+          <li><a href="mailto:perfectengineeringcorporation@gmail.com">Email Us</a></li>
+          <li><a href="http://www.perfectenggcorp.com" target="_blank">www.perfectenggcorp.com</a></li>
+          <li style="margin-top:8px;font-size:0.82rem;line-height:1.6;">
+            1/11423, Subhash Park Ext.<br>
+            Naveen Shahdara, Delhi-110032<br><br>
+            Factory: 20/6/8, Site IV<br>
+            Sahibabad Industrial Area<br>
+            Ghaziabad, U.P.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2024 Perfect Engineering Corporation. All rights reserved.</span>
+      <span>Designed for <a href="http://www.perfectenggcorp.com">perfectenggcorp.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top -->
+<button id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+
+  // Scroll-to-top visibility
+  const scrollBtn = document.getElementById('scrolltop');
+  window.addEventListener('scroll', () => {
+    scrollBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Intersection Observer for scroll-reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.product-card, .app-card, .why-card, .client-card, .feature-item, .contact-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+
+  // Mobile nav toggle
+  document.querySelector('.nav-toggle').addEventListener('click', function() {
+    const links = document.querySelector('.nav-links');
+    links.style.display = links.style.display === 'flex' ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '68px';
+    links.style.left = '0'; links.style.right = '0';
+    links.style.background = 'rgba(10,37,64,0.98)';
+    links.style.padding = '16px 24px';
+  });
+
+  // Contact form
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const subject = encodeURIComponent('Enquiry: ' + (data.get('product') || 'General'));
+    const body = encodeURIComponent(
+      'Name: ' + data.get('name') + '\n' +
+      'Company: ' + data.get('company') + '\n' +
+      'Phone: ' + data.get('phone') + '\n\n' +
+      data.get('message')
+    );
+    window.location.href = 'mailto:perfectengineeringcorporation@gmail.com?subject=' + subject + '&body=' + body;
+  }
+
+
+  // ═══════════════════════════════════════════════════════════════════
+  // HERO CANVAS ANIMATION — 4 cinematic scenes cycling every 6 seconds
+  // ═══════════════════════════════════════════════════════════════════
+  (function() {
+    var canvas = document.getElementById('heroCanvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W = 0, H = 0;
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    var TAU = Math.PI * 2;
+    var SCENE_DUR = 6; // seconds per scene
+
+    // Fixed star field
+    var stars = [];
+    for (var si = 0; si < 100; si++) {
+      stars.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.4 + 0.3, a: Math.random() * TAU });
+    }
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+    function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+
+    // ── SCENE 0: Thermal Power Plant ─────────────────────────────────
+    function sceneThermal(ts) {
+      var sky = ctx.createLinearGradient(0,0,0,H);
+      sky.addColorStop(0,'#02060f'); sky.addColorStop(0.65,'#060f20'); sky.addColorStop(1,'#050c14');
+      ctx.fillStyle = sky; ctx.fillRect(0,0,W,H);
+
+      // Stars
+      for (var i=0;i<stars.length;i++) {
+        var s=stars[i], twk=0.35+0.65*Math.abs(Math.sin(ts*0.7+s.a));
+        ctx.beginPath(); ctx.arc(s.x*W, s.y*H*0.55, s.r, 0, TAU);
+        ctx.fillStyle='rgba(200,220,255,'+twk*0.55+')'; ctx.fill();
+      }
+
+      // Orange ground glow
+      var gg=ctx.createRadialGradient(W*0.5,H,0,W*0.5,H,W*0.55);
+      gg.addColorStop(0,'rgba(255,90,20,0.28)'); gg.addColorStop(0.6,'rgba(200,60,10,0.1)'); gg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=gg; ctx.fillRect(0,0,W,H);
+
+      // Cooling towers
+      var td=[
+        {cx:0.14,h:0.50,bw:0.09,ww:0.055,tw:0.073},
+        {cx:0.36,h:0.60,bw:0.11,ww:0.065,tw:0.088},
+        {cx:0.60,h:0.57,bw:0.105,ww:0.06, tw:0.083},
+        {cx:0.83,h:0.46,bw:0.085,ww:0.05, tw:0.068}
+      ];
+      for (var ti=0;ti<td.length;ti++) {
+        var t2=td[ti];
+        var cx2=t2.cx*W, baseY=H, topY=H-t2.h*H;
+        var waistY=topY+(baseY-topY)*0.56;
+        var bw2=t2.bw*W, ww2=t2.ww*W, tw2=t2.tw*W;
+        ctx.beginPath();
+        ctx.moveTo(cx2-bw2/2,baseY);
+        ctx.bezierCurveTo(cx2-bw2/2,waistY+H*0.1,cx2-ww2/2,waistY,cx2-ww2/2,waistY);
+        ctx.bezierCurveTo(cx2-ww2/2,waistY-H*0.05,cx2-tw2/2,topY+H*0.01,cx2-tw2/2,topY);
+        ctx.lineTo(cx2+tw2/2,topY);
+        ctx.bezierCurveTo(cx2+tw2/2,topY+H*0.01,cx2+ww2/2,waistY-H*0.05,cx2+ww2/2,waistY);
+        ctx.bezierCurveTo(cx2+ww2/2,waistY,cx2+bw2/2,waistY+H*0.1,cx2+bw2/2,baseY);
+        ctx.closePath();
+        var tg=ctx.createLinearGradient(cx2-bw2/2,0,cx2+bw2/2,0);
+        tg.addColorStop(0,'rgba(14,32,58,0.96)'); tg.addColorStop(0.4,'rgba(22,48,90,0.9)');
+        tg.addColorStop(0.6,'rgba(18,40,75,0.9)'); tg.addColorStop(1,'rgba(10,24,46,0.96)');
+        ctx.fillStyle=tg; ctx.fill();
+        // Steam
+        for (var pi=0;pi<18;pi++) {
+          var seed=pi+t2.cx*200;
+          var age=((ts*0.38+seed*0.371)%1);
+          var px2=cx2+(Math.sin(seed*3.1)*ww2*0.7)*age;
+          var py2=topY-age*H*0.38;
+          var alp=(1-age)*0.22;
+          ctx.beginPath(); ctx.arc(px2,py2,age*32+4,0,TAU);
+          ctx.fillStyle='rgba(195,205,218,'+alp+')'; ctx.fill();
+        }
+      }
+
+      // Ground strip
+      ctx.fillStyle='#010608'; ctx.fillRect(0,H*0.91,W,H*0.09);
+
+      // Power line poles
+      var poles=[0.04,0.22,0.50,0.78,0.96];
+      for (var pi2=0;pi2<poles.length;pi2++) {
+        var px3=poles[pi2]*W;
+        ctx.strokeStyle='rgba(15,36,70,0.75)'; ctx.lineWidth=2;
+        ctx.beginPath(); ctx.moveTo(px3,H*0.91); ctx.lineTo(px3,H*0.72); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(px3-W*0.025,H*0.735); ctx.lineTo(px3+W*0.025,H*0.735); ctx.stroke();
+      }
+      for (var wi=0;wi<poles.length-1;wi++) {
+        ctx.beginPath();
+        ctx.moveTo(poles[wi]*W,H*0.738);
+        ctx.quadraticCurveTo((poles[wi]+poles[wi+1])*W/2,H*0.775,poles[wi+1]*W,H*0.738);
+        ctx.strokeStyle='rgba(20,45,90,0.5)'; ctx.lineWidth=1.5; ctx.stroke();
+      }
+    }
+
+    // ── SCENE 1: Dam ─────────────────────────────────────────────────
+    function sceneDam(ts) {
+      var sky=ctx.createLinearGradient(0,0,0,H);
+      sky.addColorStop(0,'#040a15'); sky.addColorStop(0.45,'#091e3c'); sky.addColorStop(0.75,'#0c2e5c'); sky.addColorStop(1,'#0a3a65');
+      ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
+
+      // Moon
+      var mg=ctx.createRadialGradient(W*0.76,H*0.14,0,W*0.76,H*0.14,H*0.28);
+      mg.addColorStop(0,'rgba(110,160,255,0.22)'); mg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=mg; ctx.fillRect(0,0,W,H);
+      ctx.beginPath(); ctx.arc(W*0.76,H*0.14,H*0.028,0,TAU);
+      ctx.fillStyle='rgba(210,225,255,0.92)'; ctx.fill();
+
+      // Stars (upper half)
+      for (var i=0;i<60;i++) {
+        var s=stars[i], twk=0.3+0.7*Math.abs(Math.sin(ts*0.9+s.a));
+        ctx.beginPath(); ctx.arc(s.x*W,s.y*H*0.45,s.r*0.7,0,TAU);
+        ctx.fillStyle='rgba(200,215,255,'+twk*0.45+')'; ctx.fill();
+      }
+
+      // Mountains
+      ctx.fillStyle='#030c1c';
+      ctx.beginPath();
+      ctx.moveTo(0,H);
+      var mpts=[[0,0.58],[0.1,0.36],[0.22,0.52],[0.32,0.28],[0.42,0.47],[0.56,0.18],[0.68,0.40],[0.79,0.29],[0.9,0.44],[1,0.37],[1,1]];
+      for (var mi=0;mi<mpts.length;mi++) ctx.lineTo(mpts[mi][0]*W,mpts[mi][1]*H);
+      ctx.closePath(); ctx.fill();
+
+      // Dam wall
+      var dTop=H*0.59,dBot=H*0.79,dL=W*0.08,dR=W*0.92;
+      ctx.beginPath();
+      ctx.moveTo(dL,dTop);
+      ctx.bezierCurveTo(W*0.3,dTop+H*0.055,W*0.7,dTop+H*0.055,dR,dTop);
+      ctx.lineTo(dR+W*0.015,dBot);
+      ctx.bezierCurveTo(W*0.7,dBot+H*0.018,W*0.3,dBot+H*0.018,dL-W*0.015,dBot);
+      ctx.closePath();
+      var dg=ctx.createLinearGradient(0,dTop,0,dBot);
+      dg.addColorStop(0,'#182a3c'); dg.addColorStop(0.4,'#223548'); dg.addColorStop(1,'#0d1b28');
+      ctx.fillStyle=dg; ctx.fill();
+      // horizontal lines
+      ctx.strokeStyle='rgba(50,80,120,0.35)'; ctx.lineWidth=1;
+      for (var dl=1;dl<=4;dl++) {
+        var ly=dTop+(dBot-dTop)*(dl/5);
+        ctx.beginPath(); ctx.moveTo(dL,ly); ctx.bezierCurveTo(W*0.3,ly+H*0.01,W*0.7,ly+H*0.01,dR,ly); ctx.stroke();
+      }
+
+      // Reservoir shimmer
+      for (var ri=0;ri<22;ri++) {
+        var rx=((ri*0.048+ts*0.025)%1)*W;
+        var ry=dTop-H*0.015+Math.sin(ts*0.55+ri)*H*0.008;
+        ctx.beginPath(); ctx.moveTo(rx,ry); ctx.lineTo(rx+W*0.038,ry);
+        ctx.strokeStyle='rgba(80,140,240,0.18)'; ctx.lineWidth=1.5; ctx.stroke();
+      }
+
+      // Water spray at base
+      for (var sp=0;sp<35;sp++) {
+        var seed=sp*0.41;
+        var age=((ts*0.65+seed)%1);
+        var sx=W*0.25+(Math.sin(seed*5.3)*0.45*W)+(age-0.5)*W*0.08;
+        var sy=dBot+age*H*0.14;
+        ctx.beginPath(); ctx.arc(sx,sy,2+age*9,0,TAU);
+        ctx.fillStyle='rgba(70,135,225,'+(1-age)*0.42+')'; ctx.fill();
+      }
+
+      // Mist
+      var mist=ctx.createLinearGradient(0,dBot,0,dBot+H*0.16);
+      mist.addColorStop(0,'rgba(70,130,210,0.32)'); mist.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=mist; ctx.fillRect(0,dBot,W,H*0.16);
+
+      // River at bottom
+      var rg=ctx.createLinearGradient(0,H*0.82,0,H);
+      rg.addColorStop(0,'#04162a'); rg.addColorStop(1,'#020e1a');
+      ctx.fillStyle=rg; ctx.fillRect(0,H*0.82,W,H*0.18);
+      for (var rw=0;rw<16;rw++) {
+        var rx2=((rw*0.065+ts*0.055)%1)*W;
+        var ry2=H*0.86+Math.sin(ts+rw)*H*0.018;
+        ctx.beginPath(); ctx.moveTo(rx2,ry2); ctx.lineTo(rx2+W*0.055,ry2);
+        ctx.strokeStyle='rgba(55,115,210,0.22)'; ctx.lineWidth=1.5; ctx.stroke();
+      }
+    }
+
+    // ── SCENE 2: Water Treatment Plant (aerial) ───────────────────────
+    function sceneWater(ts) {
+      var bg=ctx.createLinearGradient(0,0,W,H);
+      bg.addColorStop(0,'#020c18'); bg.addColorStop(1,'#030f24');
+      ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+      // Grid
+      ctx.strokeStyle='rgba(20,60,130,0.14)'; ctx.lineWidth=1;
+      var gx=W/14, gy=H/8;
+      for (var gi=0;gi<=14;gi++){ctx.beginPath();ctx.moveTo(gi*gx,0);ctx.lineTo(gi*gx,H);ctx.stroke();}
+      for (var gj=0;gj<=8;gj++){ctx.beginPath();ctx.moveTo(0,gj*gy);ctx.lineTo(W,gj*gy);ctx.stroke();}
+
+      // Tanks
+      var tanks=[
+        {x:0.20,y:0.38,r:0.14},{x:0.50,y:0.33,r:0.18},
+        {x:0.80,y:0.38,r:0.14},{x:0.34,y:0.70,r:0.10},{x:0.66,y:0.70,r:0.10}
+      ];
+      var pipes=[[0,1],[1,2],[0,3],[1,3],[1,4],[2,4]];
+
+      // Pipes
+      ctx.strokeStyle='rgba(25,75,165,0.55)'; ctx.lineWidth=W*0.007; ctx.lineCap='round';
+      for (var pp=0;pp<pipes.length;pp++) {
+        var ta=tanks[pipes[pp][0]], tb=tanks[pipes[pp][1]];
+        ctx.beginPath(); ctx.moveTo(ta.x*W,ta.y*H); ctx.lineTo(tb.x*W,tb.y*H); ctx.stroke();
+      }
+
+      // Flow dots
+      for (var fp=0;fp<pipes.length;fp++) {
+        var ta2=tanks[pipes[fp][0]], tb2=tanks[pipes[fp][1]];
+        for (var fd=0;fd<6;fd++) {
+          var frac=((ts*0.45+fd*0.167+fp*0.17)%1);
+          var fx=ta2.x*W+(tb2.x-ta2.x)*W*frac;
+          var fy=ta2.y*H+(tb2.y-ta2.y)*H*frac;
+          ctx.beginPath(); ctx.arc(fx,fy,3,0,TAU);
+          ctx.fillStyle='rgba(0,172,193,0.85)'; ctx.fill();
+        }
+      }
+
+      // Tanks
+      for (var ti2=0;ti2<tanks.length;ti2++) {
+        var tank=tanks[ti2];
+        var cx3=tank.x*W, cy3=tank.y*H, r2=tank.r*Math.min(W,H);
+        var tgr=ctx.createRadialGradient(cx3,cy3,0,cx3,cy3,r2);
+        tgr.addColorStop(0,'rgba(8,50,125,0.92)'); tgr.addColorStop(0.72,'rgba(4,28,78,0.85)'); tgr.addColorStop(1,'rgba(2,12,38,0.92)');
+        ctx.beginPath(); ctx.arc(cx3,cy3,r2,0,TAU);
+        ctx.fillStyle=tgr; ctx.fill();
+        ctx.strokeStyle='rgba(30,90,185,0.65)'; ctx.lineWidth=2.5; ctx.stroke();
+
+        // Ripple rings
+        for (var ring=0;ring<5;ring++) {
+          var ra=((ts*0.28+ring*0.2+ti2*0.12)%1);
+          var rr2=ra*r2*0.93;
+          ctx.beginPath(); ctx.arc(cx3,cy3,rr2,0,TAU);
+          ctx.strokeStyle='rgba(0,172,193,'+(1-ra)*0.38+')'; ctx.lineWidth=1.5; ctx.stroke();
+        }
+
+        // Center dot
+        ctx.beginPath(); ctx.arc(cx3,cy3,r2*0.11,0,TAU);
+        ctx.fillStyle='rgba(0,172,193,0.7)'; ctx.fill();
+
+        // Rotating arm
+        var arm=ts*(ti2%2===0?0.28:-0.22)+ti2*1.5;
+        ctx.save(); ctx.translate(cx3,cy3); ctx.rotate(arm);
+        ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(r2*0.78,0);
+        ctx.strokeStyle='rgba(0,172,193,0.5)'; ctx.lineWidth=2.5; ctx.stroke();
+        ctx.restore();
+      }
+
+      // Corner labels
+      ctx.fillStyle='rgba(0,172,193,0.12)';
+      ctx.fillRect(0,0,W,H*0.1); ctx.fillRect(0,H*0.9,W,H*0.1);
+    }
+
+    // ── SCENE 3: Nuclear Plant ────────────────────────────────────────
+    function sceneNuclear(ts) {
+      var sky2=ctx.createLinearGradient(0,0,0,H);
+      sky2.addColorStop(0,'#010307'); sky2.addColorStop(0.5,'#040b12'); sky2.addColorStop(1,'#050d10');
+      ctx.fillStyle=sky2; ctx.fillRect(0,0,W,H);
+
+      // Stars
+      for (var i=0;i<stars.length;i++) {
+        var s=stars[i], twk=0.25+0.75*Math.abs(Math.sin(ts*1.1+s.a));
+        ctx.beginPath(); ctx.arc(s.x*W,s.y*H*0.68,s.r*0.85,0,TAU);
+        ctx.fillStyle='rgba(215,228,255,'+twk*0.48+')'; ctx.fill();
+      }
+
+      // Dome
+      var dX=W*0.5, dBY=H*0.75, dR2=Math.min(W,H)*0.2;
+      var dGlow=ctx.createRadialGradient(dX,dBY,0,dX,dBY,dR2*2.2);
+      dGlow.addColorStop(0,'rgba(0,210,155,0.18)'); dGlow.addColorStop(0.55,'rgba(0,155,105,0.08)'); dGlow.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=dGlow; ctx.fillRect(0,0,W,H);
+
+      ctx.beginPath(); ctx.arc(dX,dBY,dR2,Math.PI,0); ctx.lineTo(dX+dR2,dBY); ctx.lineTo(dX-dR2,dBY); ctx.closePath();
+      var dFill=ctx.createLinearGradient(dX-dR2,dBY-dR2,dX+dR2,dBY);
+      dFill.addColorStop(0,'rgba(14,38,46,0.96)'); dFill.addColorStop(0.5,'rgba(18,50,60,0.92)'); dFill.addColorStop(1,'rgba(8,28,35,0.96)');
+      ctx.fillStyle=dFill; ctx.fill();
+      ctx.strokeStyle='rgba(0,210,155,0.35)'; ctx.lineWidth=2.5; ctx.stroke();
+
+      // Flanking buildings
+      var fbs=[[0.24,0.70,0.16,0.28],[0.76,0.70,0.16,0.28]];
+      for (var fb=0;fb<fbs.length;fb++) {
+        var f=fbs[fb];
+        ctx.fillStyle='rgba(10,26,36,0.9)';
+        ctx.fillRect((f[0]-f[2]/2)*W,(f[1]-f[3])*H,f[2]*W,f[3]*H);
+        ctx.strokeStyle='rgba(0,150,115,0.22)'; ctx.lineWidth=1;
+        ctx.strokeRect((f[0]-f[2]/2)*W,(f[1]-f[3])*H,f[2]*W,f[3]*H);
+        // Windows (small lit squares)
+        for (var wr=0;wr<3;wr++) for (var wc=0;wc<4;wc++) {
+          var wlit=Math.sin(ts*0.4+wr*7+wc*3+fb*5)>0.3;
+          if (wlit) {
+            ctx.fillStyle='rgba(255,220,80,0.55)';
+            ctx.fillRect((f[0]-f[2]/2)*W+wc*f[2]*W*0.22+f[2]*W*0.08,
+                         (f[1]-f[3])*H+wr*f[3]*H*0.28+f[3]*H*0.1,
+                         f[2]*W*0.12, f[3]*H*0.14);
+          }
+        }
+      }
+
+      // Flanking cooling towers (small)
+      var ftow=[[0.1,0.45],[0.9,0.45]];
+      for (var ft=0;ft<ftow.length;ft++) {
+        var tcx2=ftow[ft][0]*W, tcH=ftow[ft][1];
+        var tcTop2=H*(1-tcH), tcBase2=H;
+        var tbw2=W*0.068, tww2=W*0.038, ttw2=W*0.053;
+        var wY2=tcTop2+(tcBase2-tcTop2)*0.56;
+        ctx.beginPath();
+        ctx.moveTo(tcx2-tbw2/2,tcBase2);
+        ctx.bezierCurveTo(tcx2-tbw2/2,wY2+H*0.05,tcx2-tww2/2,wY2,tcx2-tww2/2,wY2);
+        ctx.bezierCurveTo(tcx2-tww2/2,wY2-H*0.03,tcx2-ttw2/2,tcTop2+H*0.01,tcx2-ttw2/2,tcTop2);
+        ctx.lineTo(tcx2+ttw2/2,tcTop2);
+        ctx.bezierCurveTo(tcx2+ttw2/2,tcTop2+H*0.01,tcx2+tww2/2,wY2-H*0.03,tcx2+tww2/2,wY2);
+        ctx.bezierCurveTo(tcx2+tww2/2,wY2,tcx2+tbw2/2,wY2+H*0.05,tcx2+tbw2/2,tcBase2);
+        ctx.fillStyle='rgba(8,22,32,0.92)'; ctx.fill();
+        for (var sp2=0;sp2<10;sp2++) {
+          var age2=((ts*0.48+sp2*0.1+ft*0.3)%1);
+          ctx.beginPath(); ctx.arc(tcx2+(sp2%3-1)*7*age2,tcTop2-age2*H*0.22,4+age2*22,0,TAU);
+          ctx.fillStyle='rgba(175,195,205,'+(1-age2)*0.14+')'; ctx.fill();
+        }
+      }
+
+      // Dome pulse rings
+      for (var dr=0;dr<4;dr++) {
+        var dra=((ts*0.38+dr*0.25)%1);
+        var drr=dR2*0.45+dra*dR2*1.6;
+        ctx.beginPath(); ctx.arc(dX,dBY,drr,Math.PI,0);
+        ctx.strokeStyle='rgba(0,210,155,'+(1-dra)*0.22+')'; ctx.lineWidth=2; ctx.stroke();
+      }
+
+      // Ground
+      var gnd=ctx.createLinearGradient(0,H*0.75,0,H);
+      gnd.addColorStop(0,'#040d12'); gnd.addColorStop(1,'#020809');
+      ctx.fillStyle=gnd; ctx.fillRect(0,H*0.75,W,H*0.25);
+
+      // Ground glow
+      var grg=ctx.createRadialGradient(dX,H,0,dX,H,W*0.42);
+      grg.addColorStop(0,'rgba(0,155,100,0.14)'); grg.addColorStop(1,'rgba(0,0,0,0)');
+      ctx.fillStyle=grg; ctx.fillRect(0,H*0.75,W,H*0.25);
+    }
+
+    // Scene meta
+    var sceneLabels = ['Thermal Power Plants','Hydroelectric Dams','Water Treatment Plants','Nuclear Power Plants'];
+    var sceneFns = [sceneThermal, sceneDam, sceneWater, sceneNuclear];
+    var labelEl = document.getElementById('heroSceneLabel');
+    var lastScene = -1;
+    var startTime = null;
+
+    function frame(ts2) {
+      requestAnimationFrame(frame);
+      if (!startTime) startTime = ts2;
+      var elapsed = (ts2 - startTime) / 1000;
+      var cycleT = elapsed % (sceneFns.length * SCENE_DUR);
+      var scIdx = Math.floor(cycleT / SCENE_DUR);
+      var scT = (cycleT % SCENE_DUR) / SCENE_DUR; // 0–1
+
+      sceneFns[scIdx](elapsed);
+
+      // Fade in / out
+      if (scT < 0.09) {
+        ctx.fillStyle = 'rgba(0,0,0,' + ease(1 - scT / 0.09) + ')';
+        ctx.fillRect(0, 0, W, H);
+      }
+      if (scT > 0.87) {
+        ctx.fillStyle = 'rgba(0,0,0,' + ease((scT - 0.87) / 0.13) + ')';
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      // Update label
+      if (labelEl && scIdx !== lastScene) {
+        lastScene = scIdx;
+        labelEl.textContent = sceneLabels[scIdx];
+      }
+    }
+
+    requestAnimationFrame(frame);
+  })();
+
+</script>
+</body>
+</html>
