@@ -125,16 +125,12 @@
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(
-        135deg,
-        rgba(10,37,64,0.92) 0%,
-        rgba(21,101,192,0.80) 55%,
-        rgba(0,172,193,0.68) 100%
-      );
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.0) 40%, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.65) 100%);
     }
     .hero-inner {
       position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      display: flex; flex-direction: column; align-items: flex-start; max-width: 720px;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -668,30 +664,6 @@
           </div>
         </div>
       </div>
-
-      <!-- RIGHT: looping video panel + KPI cards -->
-      <div class="hero-video-panel">
-        <div class="hero-video-card">
-          <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.14.28 PM.jpeg"
-               alt="PEC Installation" style="width:100%;display:block;border-radius:0;max-height:280px;object-fit:cover;"/>
-          <div class="hero-video-caption">PEC · Chlorine &amp; Safety Systems Manufacturing</div>
-        </div>
-        <div class="hero-kpi-row">
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">8<span>+</span></div>
-            <div class="hero-kpi-label">Product Lines</div>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num">15<span>+</span></div>
-            <div class="hero-kpi-label">States Served</div>
-          </div>
-          <div class="hero-kpi">
-            <div class="hero-kpi-num"><span>ISO</span></div>
-            <div class="hero-kpi-label">9001-2008</div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
