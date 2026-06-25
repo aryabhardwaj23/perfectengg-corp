@@ -116,12 +116,12 @@
     .hero-video-wrap {
       position: absolute; inset: 0; z-index: 0;
     }
-    .hero-video-wrap video,
-    .hero-video-wrap canvas {
+    .hero-video-wrap video {
       position: absolute; inset: 0;
       width: 100%; height: 100%;
       object-fit: cover; object-position: center;
       display: block;
+      transition: opacity 0.8s ease;
     }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -193,13 +193,6 @@
     .hero-kpi-label { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 3px; }
 
     /* Mute toggle button */
-    /* Scene label */
-    .hero-scene-label {
-      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
-      z-index: 10; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.55); font-weight: 500; pointer-events: none;
-      transition: opacity 0.6s;
-    }
     .hero-mute-btn {
       position: absolute; bottom: 32px; right: 32px; z-index: 10;
       background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
@@ -631,14 +624,11 @@
 <!-- ══════════════ HERO ══════════════ -->
 <section id="home">
 
-  <!-- Animated canvas background (4 scenes: thermal / dam / water treatment / nuclear) -->
+  <!-- AI-generated video background (cycles through 4 clips) -->
   <div class="hero-video-wrap">
-    <canvas id="heroCanvas"></canvas>
+    <video id="heroVid" autoplay muted playsinline preload="auto"></video>
     <div class="hero-overlay"></div>
   </div>
-
-  <!-- Scene indicator -->
-  <div class="hero-scene-label" id="heroSceneLabel"></div>
 
   <div class="container">
     <div class="hero-inner">
@@ -780,7 +770,6 @@
         <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Ta</div><span class="pill-name">Tata Power</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#e65100">Ad</div><span class="pill-name">Adani Group</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#4527a0">Hi</div><span class="pill-name">Hindustan Zinc</span></div>
-        <div class="client-pill"><div class="pill-dot" style="background:#6a1b9a">De</div><span class="pill-name">Deepak Fertilisers</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#283593">Po</div><span class="pill-name">Power Grid Corporation</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#3e2723">Co</div><span class="pill-name">Coal India Limited</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#880e4f">Re</div><span class="pill-name">Reliance Industries</span></div>
@@ -804,7 +793,6 @@
         <div class="client-pill"><div class="pill-dot" style="background:#b71c1c">Ta</div><span class="pill-name">Tata Power</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#e65100">Ad</div><span class="pill-name">Adani Group</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#4527a0">Hi</div><span class="pill-name">Hindustan Zinc</span></div>
-        <div class="client-pill"><div class="pill-dot" style="background:#6a1b9a">De</div><span class="pill-name">Deepak Fertilisers</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#283593">Po</div><span class="pill-name">Power Grid Corporation</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#3e2723">Co</div><span class="pill-name">Coal India Limited</span></div>
         <div class="client-pill"><div class="pill-dot" style="background:#880e4f">Re</div><span class="pill-name">Reliance Industries</span></div>
@@ -825,14 +813,13 @@
         <a class="client-card" href="https://www.nmdc.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/National_Mineral_Development_Corporation.svg" alt="NMDC Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#4e342e">NMDC</div><div class="client-full-name">NMDC Limited</div><div class="client-sector">Mining &amp; Minerals</div></a>
         <a class="client-card" href="https://www.npcil.nic.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/en/e/e5/NPCIL_Logo.svg" alt="Nuclear Power Corp." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#b71c1c">NPCIL</div><div class="client-full-name">Nuclear Power Corp.</div><div class="client-sector">Nuclear Energy</div></a>
         <a class="client-card" href="https://www.engineersindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Engineers_India_Logo.svg" alt="Engineers India Ltd" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#283593">EIL</div><div class="client-full-name">Engineers India Ltd</div><div class="client-sector">Engineering Consultancy</div></a>
-        <a class="client-card" href="https://www.delhijalboard.nic.in" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#00695c;display:flex">DJB</div><div class="client-full-name">Delhi Jal Board</div><div class="client-sector">Water Utility</div></a>
+        <a class="client-card" href="https://en.wikipedia.org/wiki/Delhi_Jal_Board" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#00695c;display:flex">DJB</div><div class="client-full-name">Delhi Jal Board</div><div class="client-sector">Water Utility</div></a>
         <a class="client-card" href="https://www.meconlimited.co.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/MECON_logo.svg" alt="MECON Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#37474f">MECON</div><div class="client-full-name">MECON Limited</div><div class="client-sector">Engineering &amp; Consulting</div></a>
         <a class="client-card" href="https://www.rcfltd.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Rashtriya_Chemicals_%26_Fertilizers_Logo.svg" alt="Rashtriya Chemicals &amp; Fert." onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#558b2f">RCF</div><div class="client-full-name">Rashtriya Chemicals &amp; Fert.</div><div class="client-sector">Fertilizers &amp; Chemicals</div></a>
         <a class="client-card" href="https://www.nationalfertilizers.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/National_Fertilizers_Logo.svg" alt="National Fertilizers Ltd" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#1565c0">NFL</div><div class="client-full-name">National Fertilizers Ltd</div><div class="client-sector">Fertilizers</div></a>
         <a class="client-card" href="https://www.tatapower.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tata_Power_Logo.svg" alt="Tata Power" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#b71c1c">Tata</div><div class="client-full-name">Tata Power</div><div class="client-sector">Power Generation</div></a>
         <a class="client-card" href="https://www.adani.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Adani_logo_2012.svg" alt="Adani Group" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#e65100">ADANI</div><div class="client-full-name">Adani Group</div><div class="client-sector">Conglomerate</div></a>
         <a class="client-card" href="https://www.hzlindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/HZL_Logo.png" alt="Hindustan Zinc" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#4527a0">HZL</div><div class="client-full-name">Hindustan Zinc</div><div class="client-sector">Zinc &amp; Lead</div></a>
-        <a class="client-card" href="https://www.dfpcl.com" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#6a1b9a;display:flex">DFPCL</div><div class="client-full-name">Deepak Fertilisers</div><div class="client-sector">Fertilizers &amp; Chemicals</div></a>
         <a class="client-card" href="https://www.powergridindia.com" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Power_Grid_Corporation_of_India_Logo.svg" alt="Power Grid Corporation" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#283593">PGCIL</div><div class="client-full-name">Power Grid Corporation</div><div class="client-sector">Power Transmission</div></a>
         <a class="client-card" href="https://www.coalindia.in" target="_blank" rel="noopener"><div class="client-logo-wrap"><img src="https://en.wikipedia.org/wiki/Special:FilePath/Coal_India_Logo.svg" alt="Coal India Limited" onerror="this.style.display='none';this.parentElement.style.display='none';this.parentElement.nextElementSibling.style.display='flex'"/></div><div class="client-logo-badge" style="background:#3e2723">CIL</div><div class="client-full-name">Coal India Limited</div><div class="client-sector">Coal Mining</div></a>
         <a class="client-card" href="https://www.ril.com" target="_blank" rel="noopener"><div class="client-logo-badge" style="background:#880e4f;display:flex">RIL</div><div class="client-full-name">Reliance Industries</div><div class="client-sector">Conglomerate</div></a>
@@ -1504,379 +1491,41 @@
   }
 
 
-  // ═══════════════════════════════════════════════════════════════════
-  // HERO CANVAS ANIMATION — 4 cinematic scenes cycling every 6 seconds
-  // ═══════════════════════════════════════════════════════════════════
-  (function() {
-    var canvas = document.getElementById('heroCanvas');
-    if (!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var W = 0, H = 0;
-    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-    resize();
-    window.addEventListener('resize', resize);
+  // ── Multi-video hero player ─────────────────────────────────────────────────
+  (function () {
+    var clips = [
+      'videos/v1.mp4',
+      'videos/v2.mp4',
+      'videos/v3.mp4',
+      'videos/v4.mp4'
+    ];
+    var idx = 0;
+    var vid = document.getElementById('heroVid');
+    if (!vid) return;
 
-    var TAU = Math.PI * 2;
-    var SCENE_DUR = 6; // seconds per scene
-
-    // Fixed star field
-    var stars = [];
-    for (var si = 0; si < 100; si++) {
-      stars.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.4 + 0.3, a: Math.random() * TAU });
+    function loadClip(i) {
+      vid.style.opacity = '0';
+      vid.src = clips[i];
+      vid.load();
+      vid.play().catch(function(){});
+      setTimeout(function(){ vid.style.opacity = '1'; }, 80);
     }
 
-    function lerp(a, b, t) { return a + (b - a) * t; }
-    function ease(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
-    function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
+    vid.addEventListener('ended', function () {
+      idx = (idx + 1) % clips.length;
+      loadClip(idx);
+    });
 
-    // ── SCENE 0: Thermal Power Plant ─────────────────────────────────
-    function sceneThermal(ts) {
-      var sky = ctx.createLinearGradient(0,0,0,H);
-      sky.addColorStop(0,'#02060f'); sky.addColorStop(0.65,'#060f20'); sky.addColorStop(1,'#050c14');
-      ctx.fillStyle = sky; ctx.fillRect(0,0,W,H);
-
-      // Stars
-      for (var i=0;i<stars.length;i++) {
-        var s=stars[i], twk=0.35+0.65*Math.abs(Math.sin(ts*0.7+s.a));
-        ctx.beginPath(); ctx.arc(s.x*W, s.y*H*0.55, s.r, 0, TAU);
-        ctx.fillStyle='rgba(200,220,255,'+twk*0.55+')'; ctx.fill();
+    // Preconnect next clip 1.5s before current ends
+    vid.addEventListener('timeupdate', function () {
+      if (vid.duration && vid.currentTime >= vid.duration - 1.5) {
+        var next = new XMLHttpRequest();
+        next.open('GET', clips[(idx + 1) % clips.length], true);
+        next.send();
       }
+    });
 
-      // Orange ground glow
-      var gg=ctx.createRadialGradient(W*0.5,H,0,W*0.5,H,W*0.55);
-      gg.addColorStop(0,'rgba(255,90,20,0.28)'); gg.addColorStop(0.6,'rgba(200,60,10,0.1)'); gg.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=gg; ctx.fillRect(0,0,W,H);
-
-      // Cooling towers
-      var td=[
-        {cx:0.14,h:0.50,bw:0.09,ww:0.055,tw:0.073},
-        {cx:0.36,h:0.60,bw:0.11,ww:0.065,tw:0.088},
-        {cx:0.60,h:0.57,bw:0.105,ww:0.06, tw:0.083},
-        {cx:0.83,h:0.46,bw:0.085,ww:0.05, tw:0.068}
-      ];
-      for (var ti=0;ti<td.length;ti++) {
-        var t2=td[ti];
-        var cx2=t2.cx*W, baseY=H, topY=H-t2.h*H;
-        var waistY=topY+(baseY-topY)*0.56;
-        var bw2=t2.bw*W, ww2=t2.ww*W, tw2=t2.tw*W;
-        ctx.beginPath();
-        ctx.moveTo(cx2-bw2/2,baseY);
-        ctx.bezierCurveTo(cx2-bw2/2,waistY+H*0.1,cx2-ww2/2,waistY,cx2-ww2/2,waistY);
-        ctx.bezierCurveTo(cx2-ww2/2,waistY-H*0.05,cx2-tw2/2,topY+H*0.01,cx2-tw2/2,topY);
-        ctx.lineTo(cx2+tw2/2,topY);
-        ctx.bezierCurveTo(cx2+tw2/2,topY+H*0.01,cx2+ww2/2,waistY-H*0.05,cx2+ww2/2,waistY);
-        ctx.bezierCurveTo(cx2+ww2/2,waistY,cx2+bw2/2,waistY+H*0.1,cx2+bw2/2,baseY);
-        ctx.closePath();
-        var tg=ctx.createLinearGradient(cx2-bw2/2,0,cx2+bw2/2,0);
-        tg.addColorStop(0,'rgba(14,32,58,0.96)'); tg.addColorStop(0.4,'rgba(22,48,90,0.9)');
-        tg.addColorStop(0.6,'rgba(18,40,75,0.9)'); tg.addColorStop(1,'rgba(10,24,46,0.96)');
-        ctx.fillStyle=tg; ctx.fill();
-        // Steam
-        for (var pi=0;pi<18;pi++) {
-          var seed=pi+t2.cx*200;
-          var age=((ts*0.38+seed*0.371)%1);
-          var px2=cx2+(Math.sin(seed*3.1)*ww2*0.7)*age;
-          var py2=topY-age*H*0.38;
-          var alp=(1-age)*0.22;
-          ctx.beginPath(); ctx.arc(px2,py2,age*32+4,0,TAU);
-          ctx.fillStyle='rgba(195,205,218,'+alp+')'; ctx.fill();
-        }
-      }
-
-      // Ground strip
-      ctx.fillStyle='#010608'; ctx.fillRect(0,H*0.91,W,H*0.09);
-
-      // Power line poles
-      var poles=[0.04,0.22,0.50,0.78,0.96];
-      for (var pi2=0;pi2<poles.length;pi2++) {
-        var px3=poles[pi2]*W;
-        ctx.strokeStyle='rgba(15,36,70,0.75)'; ctx.lineWidth=2;
-        ctx.beginPath(); ctx.moveTo(px3,H*0.91); ctx.lineTo(px3,H*0.72); ctx.stroke();
-        ctx.beginPath(); ctx.moveTo(px3-W*0.025,H*0.735); ctx.lineTo(px3+W*0.025,H*0.735); ctx.stroke();
-      }
-      for (var wi=0;wi<poles.length-1;wi++) {
-        ctx.beginPath();
-        ctx.moveTo(poles[wi]*W,H*0.738);
-        ctx.quadraticCurveTo((poles[wi]+poles[wi+1])*W/2,H*0.775,poles[wi+1]*W,H*0.738);
-        ctx.strokeStyle='rgba(20,45,90,0.5)'; ctx.lineWidth=1.5; ctx.stroke();
-      }
-    }
-
-    // ── SCENE 1: Dam ─────────────────────────────────────────────────
-    function sceneDam(ts) {
-      var sky=ctx.createLinearGradient(0,0,0,H);
-      sky.addColorStop(0,'#040a15'); sky.addColorStop(0.45,'#091e3c'); sky.addColorStop(0.75,'#0c2e5c'); sky.addColorStop(1,'#0a3a65');
-      ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
-
-      // Moon
-      var mg=ctx.createRadialGradient(W*0.76,H*0.14,0,W*0.76,H*0.14,H*0.28);
-      mg.addColorStop(0,'rgba(110,160,255,0.22)'); mg.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=mg; ctx.fillRect(0,0,W,H);
-      ctx.beginPath(); ctx.arc(W*0.76,H*0.14,H*0.028,0,TAU);
-      ctx.fillStyle='rgba(210,225,255,0.92)'; ctx.fill();
-
-      // Stars (upper half)
-      for (var i=0;i<60;i++) {
-        var s=stars[i], twk=0.3+0.7*Math.abs(Math.sin(ts*0.9+s.a));
-        ctx.beginPath(); ctx.arc(s.x*W,s.y*H*0.45,s.r*0.7,0,TAU);
-        ctx.fillStyle='rgba(200,215,255,'+twk*0.45+')'; ctx.fill();
-      }
-
-      // Mountains
-      ctx.fillStyle='#030c1c';
-      ctx.beginPath();
-      ctx.moveTo(0,H);
-      var mpts=[[0,0.58],[0.1,0.36],[0.22,0.52],[0.32,0.28],[0.42,0.47],[0.56,0.18],[0.68,0.40],[0.79,0.29],[0.9,0.44],[1,0.37],[1,1]];
-      for (var mi=0;mi<mpts.length;mi++) ctx.lineTo(mpts[mi][0]*W,mpts[mi][1]*H);
-      ctx.closePath(); ctx.fill();
-
-      // Dam wall
-      var dTop=H*0.59,dBot=H*0.79,dL=W*0.08,dR=W*0.92;
-      ctx.beginPath();
-      ctx.moveTo(dL,dTop);
-      ctx.bezierCurveTo(W*0.3,dTop+H*0.055,W*0.7,dTop+H*0.055,dR,dTop);
-      ctx.lineTo(dR+W*0.015,dBot);
-      ctx.bezierCurveTo(W*0.7,dBot+H*0.018,W*0.3,dBot+H*0.018,dL-W*0.015,dBot);
-      ctx.closePath();
-      var dg=ctx.createLinearGradient(0,dTop,0,dBot);
-      dg.addColorStop(0,'#182a3c'); dg.addColorStop(0.4,'#223548'); dg.addColorStop(1,'#0d1b28');
-      ctx.fillStyle=dg; ctx.fill();
-      // horizontal lines
-      ctx.strokeStyle='rgba(50,80,120,0.35)'; ctx.lineWidth=1;
-      for (var dl=1;dl<=4;dl++) {
-        var ly=dTop+(dBot-dTop)*(dl/5);
-        ctx.beginPath(); ctx.moveTo(dL,ly); ctx.bezierCurveTo(W*0.3,ly+H*0.01,W*0.7,ly+H*0.01,dR,ly); ctx.stroke();
-      }
-
-      // Reservoir shimmer
-      for (var ri=0;ri<22;ri++) {
-        var rx=((ri*0.048+ts*0.025)%1)*W;
-        var ry=dTop-H*0.015+Math.sin(ts*0.55+ri)*H*0.008;
-        ctx.beginPath(); ctx.moveTo(rx,ry); ctx.lineTo(rx+W*0.038,ry);
-        ctx.strokeStyle='rgba(80,140,240,0.18)'; ctx.lineWidth=1.5; ctx.stroke();
-      }
-
-      // Water spray at base
-      for (var sp=0;sp<35;sp++) {
-        var seed=sp*0.41;
-        var age=((ts*0.65+seed)%1);
-        var sx=W*0.25+(Math.sin(seed*5.3)*0.45*W)+(age-0.5)*W*0.08;
-        var sy=dBot+age*H*0.14;
-        ctx.beginPath(); ctx.arc(sx,sy,2+age*9,0,TAU);
-        ctx.fillStyle='rgba(70,135,225,'+(1-age)*0.42+')'; ctx.fill();
-      }
-
-      // Mist
-      var mist=ctx.createLinearGradient(0,dBot,0,dBot+H*0.16);
-      mist.addColorStop(0,'rgba(70,130,210,0.32)'); mist.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=mist; ctx.fillRect(0,dBot,W,H*0.16);
-
-      // River at bottom
-      var rg=ctx.createLinearGradient(0,H*0.82,0,H);
-      rg.addColorStop(0,'#04162a'); rg.addColorStop(1,'#020e1a');
-      ctx.fillStyle=rg; ctx.fillRect(0,H*0.82,W,H*0.18);
-      for (var rw=0;rw<16;rw++) {
-        var rx2=((rw*0.065+ts*0.055)%1)*W;
-        var ry2=H*0.86+Math.sin(ts+rw)*H*0.018;
-        ctx.beginPath(); ctx.moveTo(rx2,ry2); ctx.lineTo(rx2+W*0.055,ry2);
-        ctx.strokeStyle='rgba(55,115,210,0.22)'; ctx.lineWidth=1.5; ctx.stroke();
-      }
-    }
-
-    // ── SCENE 2: Water Treatment Plant (aerial) ───────────────────────
-    function sceneWater(ts) {
-      var bg=ctx.createLinearGradient(0,0,W,H);
-      bg.addColorStop(0,'#020c18'); bg.addColorStop(1,'#030f24');
-      ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-
-      // Grid
-      ctx.strokeStyle='rgba(20,60,130,0.14)'; ctx.lineWidth=1;
-      var gx=W/14, gy=H/8;
-      for (var gi=0;gi<=14;gi++){ctx.beginPath();ctx.moveTo(gi*gx,0);ctx.lineTo(gi*gx,H);ctx.stroke();}
-      for (var gj=0;gj<=8;gj++){ctx.beginPath();ctx.moveTo(0,gj*gy);ctx.lineTo(W,gj*gy);ctx.stroke();}
-
-      // Tanks
-      var tanks=[
-        {x:0.20,y:0.38,r:0.14},{x:0.50,y:0.33,r:0.18},
-        {x:0.80,y:0.38,r:0.14},{x:0.34,y:0.70,r:0.10},{x:0.66,y:0.70,r:0.10}
-      ];
-      var pipes=[[0,1],[1,2],[0,3],[1,3],[1,4],[2,4]];
-
-      // Pipes
-      ctx.strokeStyle='rgba(25,75,165,0.55)'; ctx.lineWidth=W*0.007; ctx.lineCap='round';
-      for (var pp=0;pp<pipes.length;pp++) {
-        var ta=tanks[pipes[pp][0]], tb=tanks[pipes[pp][1]];
-        ctx.beginPath(); ctx.moveTo(ta.x*W,ta.y*H); ctx.lineTo(tb.x*W,tb.y*H); ctx.stroke();
-      }
-
-      // Flow dots
-      for (var fp=0;fp<pipes.length;fp++) {
-        var ta2=tanks[pipes[fp][0]], tb2=tanks[pipes[fp][1]];
-        for (var fd=0;fd<6;fd++) {
-          var frac=((ts*0.45+fd*0.167+fp*0.17)%1);
-          var fx=ta2.x*W+(tb2.x-ta2.x)*W*frac;
-          var fy=ta2.y*H+(tb2.y-ta2.y)*H*frac;
-          ctx.beginPath(); ctx.arc(fx,fy,3,0,TAU);
-          ctx.fillStyle='rgba(0,172,193,0.85)'; ctx.fill();
-        }
-      }
-
-      // Tanks
-      for (var ti2=0;ti2<tanks.length;ti2++) {
-        var tank=tanks[ti2];
-        var cx3=tank.x*W, cy3=tank.y*H, r2=tank.r*Math.min(W,H);
-        var tgr=ctx.createRadialGradient(cx3,cy3,0,cx3,cy3,r2);
-        tgr.addColorStop(0,'rgba(8,50,125,0.92)'); tgr.addColorStop(0.72,'rgba(4,28,78,0.85)'); tgr.addColorStop(1,'rgba(2,12,38,0.92)');
-        ctx.beginPath(); ctx.arc(cx3,cy3,r2,0,TAU);
-        ctx.fillStyle=tgr; ctx.fill();
-        ctx.strokeStyle='rgba(30,90,185,0.65)'; ctx.lineWidth=2.5; ctx.stroke();
-
-        // Ripple rings
-        for (var ring=0;ring<5;ring++) {
-          var ra=((ts*0.28+ring*0.2+ti2*0.12)%1);
-          var rr2=ra*r2*0.93;
-          ctx.beginPath(); ctx.arc(cx3,cy3,rr2,0,TAU);
-          ctx.strokeStyle='rgba(0,172,193,'+(1-ra)*0.38+')'; ctx.lineWidth=1.5; ctx.stroke();
-        }
-
-        // Center dot
-        ctx.beginPath(); ctx.arc(cx3,cy3,r2*0.11,0,TAU);
-        ctx.fillStyle='rgba(0,172,193,0.7)'; ctx.fill();
-
-        // Rotating arm
-        var arm=ts*(ti2%2===0?0.28:-0.22)+ti2*1.5;
-        ctx.save(); ctx.translate(cx3,cy3); ctx.rotate(arm);
-        ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(r2*0.78,0);
-        ctx.strokeStyle='rgba(0,172,193,0.5)'; ctx.lineWidth=2.5; ctx.stroke();
-        ctx.restore();
-      }
-
-      // Corner labels
-      ctx.fillStyle='rgba(0,172,193,0.12)';
-      ctx.fillRect(0,0,W,H*0.1); ctx.fillRect(0,H*0.9,W,H*0.1);
-    }
-
-    // ── SCENE 3: Nuclear Plant ────────────────────────────────────────
-    function sceneNuclear(ts) {
-      var sky2=ctx.createLinearGradient(0,0,0,H);
-      sky2.addColorStop(0,'#010307'); sky2.addColorStop(0.5,'#040b12'); sky2.addColorStop(1,'#050d10');
-      ctx.fillStyle=sky2; ctx.fillRect(0,0,W,H);
-
-      // Stars
-      for (var i=0;i<stars.length;i++) {
-        var s=stars[i], twk=0.25+0.75*Math.abs(Math.sin(ts*1.1+s.a));
-        ctx.beginPath(); ctx.arc(s.x*W,s.y*H*0.68,s.r*0.85,0,TAU);
-        ctx.fillStyle='rgba(215,228,255,'+twk*0.48+')'; ctx.fill();
-      }
-
-      // Dome
-      var dX=W*0.5, dBY=H*0.75, dR2=Math.min(W,H)*0.2;
-      var dGlow=ctx.createRadialGradient(dX,dBY,0,dX,dBY,dR2*2.2);
-      dGlow.addColorStop(0,'rgba(0,210,155,0.18)'); dGlow.addColorStop(0.55,'rgba(0,155,105,0.08)'); dGlow.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=dGlow; ctx.fillRect(0,0,W,H);
-
-      ctx.beginPath(); ctx.arc(dX,dBY,dR2,Math.PI,0); ctx.lineTo(dX+dR2,dBY); ctx.lineTo(dX-dR2,dBY); ctx.closePath();
-      var dFill=ctx.createLinearGradient(dX-dR2,dBY-dR2,dX+dR2,dBY);
-      dFill.addColorStop(0,'rgba(14,38,46,0.96)'); dFill.addColorStop(0.5,'rgba(18,50,60,0.92)'); dFill.addColorStop(1,'rgba(8,28,35,0.96)');
-      ctx.fillStyle=dFill; ctx.fill();
-      ctx.strokeStyle='rgba(0,210,155,0.35)'; ctx.lineWidth=2.5; ctx.stroke();
-
-      // Flanking buildings
-      var fbs=[[0.24,0.70,0.16,0.28],[0.76,0.70,0.16,0.28]];
-      for (var fb=0;fb<fbs.length;fb++) {
-        var f=fbs[fb];
-        ctx.fillStyle='rgba(10,26,36,0.9)';
-        ctx.fillRect((f[0]-f[2]/2)*W,(f[1]-f[3])*H,f[2]*W,f[3]*H);
-        ctx.strokeStyle='rgba(0,150,115,0.22)'; ctx.lineWidth=1;
-        ctx.strokeRect((f[0]-f[2]/2)*W,(f[1]-f[3])*H,f[2]*W,f[3]*H);
-        // Windows (small lit squares)
-        for (var wr=0;wr<3;wr++) for (var wc=0;wc<4;wc++) {
-          var wlit=Math.sin(ts*0.4+wr*7+wc*3+fb*5)>0.3;
-          if (wlit) {
-            ctx.fillStyle='rgba(255,220,80,0.55)';
-            ctx.fillRect((f[0]-f[2]/2)*W+wc*f[2]*W*0.22+f[2]*W*0.08,
-                         (f[1]-f[3])*H+wr*f[3]*H*0.28+f[3]*H*0.1,
-                         f[2]*W*0.12, f[3]*H*0.14);
-          }
-        }
-      }
-
-      // Flanking cooling towers (small)
-      var ftow=[[0.1,0.45],[0.9,0.45]];
-      for (var ft=0;ft<ftow.length;ft++) {
-        var tcx2=ftow[ft][0]*W, tcH=ftow[ft][1];
-        var tcTop2=H*(1-tcH), tcBase2=H;
-        var tbw2=W*0.068, tww2=W*0.038, ttw2=W*0.053;
-        var wY2=tcTop2+(tcBase2-tcTop2)*0.56;
-        ctx.beginPath();
-        ctx.moveTo(tcx2-tbw2/2,tcBase2);
-        ctx.bezierCurveTo(tcx2-tbw2/2,wY2+H*0.05,tcx2-tww2/2,wY2,tcx2-tww2/2,wY2);
-        ctx.bezierCurveTo(tcx2-tww2/2,wY2-H*0.03,tcx2-ttw2/2,tcTop2+H*0.01,tcx2-ttw2/2,tcTop2);
-        ctx.lineTo(tcx2+ttw2/2,tcTop2);
-        ctx.bezierCurveTo(tcx2+ttw2/2,tcTop2+H*0.01,tcx2+tww2/2,wY2-H*0.03,tcx2+tww2/2,wY2);
-        ctx.bezierCurveTo(tcx2+tww2/2,wY2,tcx2+tbw2/2,wY2+H*0.05,tcx2+tbw2/2,tcBase2);
-        ctx.fillStyle='rgba(8,22,32,0.92)'; ctx.fill();
-        for (var sp2=0;sp2<10;sp2++) {
-          var age2=((ts*0.48+sp2*0.1+ft*0.3)%1);
-          ctx.beginPath(); ctx.arc(tcx2+(sp2%3-1)*7*age2,tcTop2-age2*H*0.22,4+age2*22,0,TAU);
-          ctx.fillStyle='rgba(175,195,205,'+(1-age2)*0.14+')'; ctx.fill();
-        }
-      }
-
-      // Dome pulse rings
-      for (var dr=0;dr<4;dr++) {
-        var dra=((ts*0.38+dr*0.25)%1);
-        var drr=dR2*0.45+dra*dR2*1.6;
-        ctx.beginPath(); ctx.arc(dX,dBY,drr,Math.PI,0);
-        ctx.strokeStyle='rgba(0,210,155,'+(1-dra)*0.22+')'; ctx.lineWidth=2; ctx.stroke();
-      }
-
-      // Ground
-      var gnd=ctx.createLinearGradient(0,H*0.75,0,H);
-      gnd.addColorStop(0,'#040d12'); gnd.addColorStop(1,'#020809');
-      ctx.fillStyle=gnd; ctx.fillRect(0,H*0.75,W,H*0.25);
-
-      // Ground glow
-      var grg=ctx.createRadialGradient(dX,H,0,dX,H,W*0.42);
-      grg.addColorStop(0,'rgba(0,155,100,0.14)'); grg.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=grg; ctx.fillRect(0,H*0.75,W,H*0.25);
-    }
-
-    // Scene meta
-    var sceneLabels = ['Thermal Power Plants','Hydroelectric Dams','Water Treatment Plants','Nuclear Power Plants'];
-    var sceneFns = [sceneThermal, sceneDam, sceneWater, sceneNuclear];
-    var labelEl = document.getElementById('heroSceneLabel');
-    var lastScene = -1;
-    var startTime = null;
-
-    function frame(ts2) {
-      requestAnimationFrame(frame);
-      if (!startTime) startTime = ts2;
-      var elapsed = (ts2 - startTime) / 1000;
-      var cycleT = elapsed % (sceneFns.length * SCENE_DUR);
-      var scIdx = Math.floor(cycleT / SCENE_DUR);
-      var scT = (cycleT % SCENE_DUR) / SCENE_DUR; // 0–1
-
-      sceneFns[scIdx](elapsed);
-
-      // Fade in / out
-      if (scT < 0.09) {
-        ctx.fillStyle = 'rgba(0,0,0,' + ease(1 - scT / 0.09) + ')';
-        ctx.fillRect(0, 0, W, H);
-      }
-      if (scT > 0.87) {
-        ctx.fillStyle = 'rgba(0,0,0,' + ease((scT - 0.87) / 0.13) + ')';
-        ctx.fillRect(0, 0, W, H);
-      }
-
-      // Update label
-      if (labelEl && scIdx !== lastScene) {
-        lastScene = scIdx;
-        labelEl.textContent = sceneLabels[scIdx];
-      }
-    }
-
-    requestAnimationFrame(frame);
+    loadClip(0);
   })();
 
 </script>
