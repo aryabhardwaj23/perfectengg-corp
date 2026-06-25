@@ -1035,8 +1035,10 @@
         <p class="section-sub">
           Our equipment is deployed in the most demanding industrial environments — from municipal water treatment to nuclear power stations — ensuring safe chlorine handling and corrosion-resistant operations.
         </p>
-        <div style="margin-top:32px">
-          <img src="WhatsApp Unknown 2026-06-17 at 6.18.59 PM/WhatsApp Image 2026-06-17 at 6.15.02 PM.jpeg" alt="Industrial installation" style="border-radius:14px;width:100%;object-fit:cover;max-height:280px;box-shadow:0 12px 40px rgba(0,0,0,0.14)" loading="lazy" />
+        <div style="margin-top:32px;position:relative;border-radius:14px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.18);max-height:300px;background:#000;">
+          <video id="industryVid" autoplay muted playsinline
+            style="width:100%;display:block;max-height:300px;object-fit:cover;"></video>
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.38) 0%,rgba(0,0,0,0) 60%);pointer-events:none;"></div>
         </div>
       </div>
       <div class="apps-grid">
@@ -1498,6 +1500,20 @@
     });
 
     loadClip(0);
+  })();
+
+
+  // ── Industries section video cycling ────────────────────────────────────────
+  (function () {
+    var clips = ['videos/v1.mp4','videos/v2.mp4','videos/v3.mp4','videos/v4.mp4'];
+    var idx = 1; // start on v2 (PEC branded) for variety vs hero which starts on v1
+    var vid = document.getElementById('industryVid');
+    if (!vid) return;
+    function load(i) {
+      vid.src = clips[i]; vid.load(); vid.play().catch(function(){});
+    }
+    vid.addEventListener('ended', function () { idx = (idx + 1) % clips.length; load(idx); });
+    load(idx);
   })();
 
 </script>
